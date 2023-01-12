@@ -1,0 +1,442 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+       
+
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Risk Assessment website</title>
+    </head>
+    <body>
+
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Jijue</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="/" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">FAQs</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Charts</a></li>
+                        <li class="nav__item"><a href="{% url 'nutrition-page' %}" class="nav__link">Nutrition Tips</a></li>
+                        <li class="nav__item"><a href="{% url 'vct-page' %}" class="nav__link">VCT Centres</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact Us</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+
+
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">LEAVE<br>WORRIES BEHIND <br><span class="home__title-color">WITH HIV RISK <br> ASSESSMENT</span></h1>
+
+                    <a href="{% url 'welcome-page' %}" class="button">Assess my risk</a>
+
+                </div>
+
+                <div class="home__social">
+                    <a href="" class="home__social-icon"><i class='bx bxl-facebook'></i></a>
+                    <a href="" class="home__social-icon"><i class='bx bxl-instagram' ></i></a>
+                    <a href="" class="home__social-icon"><i class='bx bxl-twitter' ></i></a>
+                </div>
+
+                <div class="home__img">
+                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <mask id="mask0" mask-type="alpha">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                        </mask>
+                        <g mask="url(#mask0)">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                            <image class="home__blob-img" x="50" y="60" href="{% static 'images/sarah.png' %}"/>
+                        </g>
+                    </svg>
+                </div>
+            </section>
+
+
+
+
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about">
+                <h2 class="section-title">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="{% static 'images/about.png' %}" alt="">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">About Jijue</h2>
+                        <p class="about__text">Jijue is a platform where one access their risk of contracting HIV
+                            By undertaking a short assessment that involves a questionnaire on different
+                            Risk factors that may make one vulnerable to contracting the virus.
+                            Questions asked are based on real statistics on how HIV is spread, sexual behaviors and even use of drug substance between individuals mostly by shared
+                            Syringe injection which is a culminating factor in spread of HIV.
+                            After assessment a risk score is auto-generated by our machine model that shows your risk level and recommends ways to minimize chances of contracting the virus.
+                            </p>
+                        <h2 class="about__subtitle">Our mission</h2>
+                        <p class="about__text">In an age of fast paced technologies, JIJUE was founded to provide a smart, accessible and multifunctional digital health platform that offers a 
+                            seamless experience in undertaking an accurate self risk assessment for HIV, while also creating a nationwide linkage for easy accessibility to HIV testing and prevention services. 
+                            We strive to reshape the approach in promoting HIV testing.
+                            </p>
+                                  
+                        <h2 class="about__subtitle">Our vision</h2>
+                        <p class="about__text">We aspire to establish a globally renowned platform of utter excellence in promoting HIV awareness, testing and prevention, 
+                            ultimately containing the HIV/AIDS epidemic and creating a world without AIDS.
+                            </p>     
+                    </div>                                   
+                </div>
+            </section>
+
+            <!--===== FAQs =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">FAQs</h2>
+
+                <div class="skills__container bd-grid">          
+                    <div>
+                        <h2 class="skills__subtitle">Frequently asked questions</h2>
+                        <div class="faq_item">
+                            <div class="faqs">
+                            
+                                <div class="qna">
+                                  <h3 class="question">What is HIV and AIDS</h3>
+                                  <div class="answer">
+                                    <p>
+                                        Did you know that HIV came from chimps as far back as the 19th century? 
+                                        Human hunters were the bridge to this, as they would eat the meat or come into 
+                                        contact with the blood of monkeys and apes.
+                                        HIV, fully known as the Human Immunodeficiency Virus is a virus that weakens the body’s ability to fight off infections. 
+                                        A non-curable but controllable disease. 
+                                        Therefore a person infected with HIV has a resultant weak immunity and if not treated will lead to AIDS- Acquired Immunodeficiency Syndrome- the most severe phase of
+                                         HIV infection.
+
+                                    </p>
+                                  </div>
+                                </div>
+                            
+                                <div class="qna">
+                                  <h3 class="question">How Is HIV trasmitted?</h3>
+                                  <div class="answer">
+                                    <p>
+                                        The only way HIV is transmitted is through contact with body fluids- Blood, Semen, Vaginal fluids, Breast milk, that come from someone living with HIV fluids.
+                                        These fluids have the highest concentration of the HIV virus.
+                                        Therefore, having (anal, vaginal, oral )sex with a person living with HIV WITHOUT use of a condom, sharing of drug and tattoo needles with someone living with HIV and mother-to-child during birth and breast feeding are important ways of acquiring HIV.
+                                        <br>
+                                        <p style="color: red;">Sweat, saliva, tears and pee do not cause HIV transmission!!!</p> 
+                                        
+                                    </p>
+                                  </div>
+                                </div>
+                            
+                                <div class="qna">
+                                  <h3 class="question">How can I know that I have HIV?</h3>
+                                  <div class="answer">
+                                    <p>
+                                        <p style="color: red;">GET TESTED!</p>
+                                        <br>
+                                         
+
+                                        HIV is somewhat of a silent and non specific disease in its early stages and symptoms only come about in advanced stages. 
+                                        At first, flu- like symptoms may show within 2-6 weeks after infection;fever, sorethroat, body rash, but thereafter may take several years for any other symptoms to show.
+                                        
+                                    </p>
+                                  </div>
+                                </div>
+                            
+                                <div class="qna">
+                                  <h3 class="question">What are the Symptoms of HIV?</h3>
+                                  <div class="answer">
+                                    <p>
+                                        <h1 style="font-size: 14px;">ACUTE SYMPTOMS(2-6 weeks)</h1>
+                                        Acute symptoms include headache,cough, sorethroat, swollen lymph nodes, fever, skin rashes,joint
+                                         and muscle pain, diarrhea and vomiting, weight loss,
+                                    </p>
+                                    <br>
+                                    <p>
+                                        <h1 style="font-size: 14px;">CHRONIC SYMPTOMS (varied time)</h1>
+                                        Also known as the asymptomatic or latent phase. There are few or no symptoms at all. Can last up to 10 years.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        <h1 style="font-size: 14px;">AIDS SYMPTOMS</h1>
+                                        Final stage of the infection.
+                                        <br>
+                                        •	Persistent high fevers(37.8 degrees)
+                                        <br>
+                                        •	Severe chills and night sweats.
+                                        <br>
+                                        •	White spots in the mouth
+                                        <br>
+                                        •	Genital or anal sores
+                                        <br>
+                                        •   Severe fatigue
+                                        <br>
+                                        •	Rashes that can be brown,red,purple,pink
+                                        <br>
+                                        •	Regular coughing and breathing problems
+                                        <br>
+                                        •	Significant weight loss
+                                        <br>
+                                        •	Persistent headaches.
+                                        <br>
+                                        •	Memory problems
+                                        <br>
+                                        •	Pneumonia.
+
+                                    </p>
+                                    <br>
+                                    <p style="color: red;">Don’t wait for symptoms to show up, get tested.</p>
+                                  </div>
+                                </div>
+                            
+                                <div class="qna">
+                                  <h3 class="question">About HIV Testing</h3>
+                                  <div class="answer">
+                                    <p>
+                                        <h1 style="font-size: 14px;">How do I get tested for HIV?</h1>
+                                        It’s very simple.
+                                        It only requires that you could either visit the nearest VCT center and have a test done or simply order a self-test kit at the comfort of your home.
+                                        A special device is used and it will give you results in 20-60 minutes.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        <h1 style="font-size: 14px;">How long should I wait to get tested for HIV?</h1>
+                                        With any suspicion get tested right away. The sooner, the better.
+                                        If you think you’ve been exposed and your HIV test within the first 3 months was negative, get another test at 6months.
+
+                                    </p>
+                                    <br>
+                                    <p>
+                                        <h1 style="font-size: 14px;">What if I test positive for HIV?</h1>
+                                        It’s all manageable and treatable. It’s all under your control.
+                                        HIV treatment has revolutionized throughout the years, with simpler and better treatments incorporated and people are living longer and with a better quality of life than ever before.- podcasts.
+                                        Therefore prompting immediate and consistent medical treatment is important here. The earlier you start it, the better the outcome.
+                                        Building up a healthy lifestyle is a crucial key to improving your life. Doing what makes you happy and that which most importantly adds value to your health. Get this, physical exercise actually boosts your immunity. A healthy, balanced diet- nutrition tips, adequate & regular sleep patterns and most importantly, talking about it to your loved ones will all better your final outcome.
+                                        <br>
+                                        <p style="color: red;">You can also talk to a counsellor through this link---</p>
+                                    </p>
+                                    
+                                  </div>
+                                </div>
+
+                                <div class="qna">
+                                    <h3 class="question">Can I still have kids now that I have HIV?</h3>
+                                    <div class="answer">
+                                      <p>
+                                        <h1 style="font-size: 13px;">YES!</h1>
+                                       You can lead a normal life despite this. Doctors will help you take steps to lower the chances that you’ll pass the virus to your partner and to your child. 
+                                       The child will also be given some preventive medication right after birth.
+                                      </p>
+                                    </div>
+                                </div>
+
+                                <div class="qna">
+                                    <h3 class="question">Is there a cure/vaccine for HIV?</h3>
+                                    <div class="answer">
+                                      <p>
+                                        No. At least not yet. Scientists are however working on it.
+                                      </p>
+                                    </div>
+                                </div>
+
+                                <div class="qna">
+                                    <h3 class="question">Can condoms prevent HIV?</h3>
+                                    <div class="answer">
+                                      <p>
+                                        Condoms come in a variety of types- most common being latex. 
+                                        They are good at stopping HIV spread through sex but only when used every time you have sex and if used correctly. 
+                                        They prevent contact with body fluids that could spread the virus.
+
+                                      </p>
+                                    </div>
+                                </div>
+
+                                <div class="qna">
+                                    <h3 class="question">About PrEP?</h3>
+                                    <div class="answer">
+                                      <p>
+                                        <h1 style="font-size: 14px;">What is PrEP</h1>
+                                        This is Pre-Exposure Prophylaxis. Which is medication given to people at substantial riskof HIV infection as part of HIV prevention approaches. 
+                                        It is only taken for those who are HIV negative and do not have the acute symptoms of HIV.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        <h1 style="font-size: 14px;">PrEP Recommendations</h1>
+                                        It is mainly recommended for people who have: 
+                                        <br>
+                                        •	Sexual partner(s) who is a known HIV positive and is not: On treatment, Has been on treatment for less than 6 months, Suspected to be poorly taking the treatment and/or, Unknown or detectable viral load
+                                        <br>
+                                        •	Sexual partner(s) of unknown HIV status and are at high risk of infection( have multiple sexual partners, has had STI, sex workers, inject drugs and live in HIV burden settings.
+                                        <br>
+                                        •	History of recent STI in the past 6 months.
+                                        <br>
+                                        •	Recurrent sex under influence of alcohol.
+                                        <br>
+                                        •	Inconsistent or no condom use with persons of unknown HIV status.
+                                        <br>
+                                        •	One of the partners is HIV positive and they are trying to conceive.
+                                        <br>
+                                        •	Have been prescribed PEP and you report continued risk behavior or have used multiple courses of PEP.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        <h1 style="font-size: 14px;">Is PrEP safe</h1>
+                                        It is safe. But some people experience side effects.
+                                        Diarrhea, Nausea, Headache, Fatigue, Stomach pain. Tell your doctor about any severe side effects or those that do not go away.
+
+                                    </p>
+                                    <br>
+                                    <p>
+                                        <h1 style="font-size: 14px;">PrEP and Pregnancy</h1>
+                                        PrEP may be an option to help protect you and your baby from getting HIV while you are trying to get pregnant, during pregnancy or breastfeeding.
+                                    </p>
+                                    </div>
+                                </div>
+
+                                <div class="qna">
+                                    <h3 class="question">About PEP</h3>
+                                    <div class="answer">
+                                      <p>
+                                        <h1 style="font-size: 14px;">What is PEP</h1>
+                                        This is post-exposure prophylaxis.
+                                        The use of medication to reduce the likelihood of HIV infection after potential exposure, given as soon as possible within 72hours after exposure.
+                                        <br>
+                                        It is given in;
+                                        <br>
+                                        •	Accidental contact with blood through being pricked by a sharp.
+                                        <br>
+                                        •	 Shared needle, syringes, to inject drugs.
+                                        <br>
+                                        •	If you’ve been sexually assaulted.
+                                      </p>
+                                      <br>
+                                      <p>
+                                        <h1 style="font-size: 14px;">Side effects of PEP</h1>
+                                        •   It is safe for use but may cause nausea in some people.
+                                      </p>
+                                    </div>
+                                </div>
+                              </div>
+                        </div>
+                </div>
+            </section>
+
+            <!--===== CHARTS =====-->
+            <section class="" id="work">
+                <h2 class="section-title">Charts</h2>
+            
+
+                <div class="work__container bd-grid">
+                    <a href="{% url 'stat-page' %}" class="work__img">
+                        <img src="{% static 'images/g1.jpg' %}" alt="">
+                    </a>
+                    <a href="{% url 'stat-page' %}" class="work__img">
+                        <img src="{% static 'images/g2.jpg' %}"  alt="">
+                    </a>
+                    <a href="{% url 'stat-page' %}" class="work__img">
+                        <img src="{% static 'images/g3.jpg' %}"  alt="">
+                    </a>
+                    <a href="{% url 'stat-page' %}" class="work__img">
+                        <img src="{% static 'images/g4.jpg' %}"  alt="">
+                    </a>
+                    <a href="{% url 'stat-page' %}" class="work__img">
+                        <img src="{% static 'images/g5.jpg' %}"  alt="">
+                    </a>
+                    <a href="{% url 'stat-page' %}" class="work__img">
+                        <img src="{% static 'images/g6.jpg' %}"  alt="">
+                    </a>
+                </div>
+            </section>
+
+
+            <!--===== CONTACT =====-->
+
+        <section class="contact section" id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact__container bd-grid">
+                <form role="form" name="ajax-form" id="ajax-form" method="post" class="contact__form" action="">
+                {% csrf_token %}
+                    <!-- <input class="form-control" id="name2" name="name" type="text" placeholder="name"> -->
+                    <input type="text" id="name2" placeholder="Name" name="name" class="contact__input">
+                    <div class="error" id="err-name" style="display: none;">Please enter name</div>
+    
+                    <!-- <input class="form-control"  type="text" placeholder="email"> -->
+                    <input id="email2" name="email" type="mail" placeholder="Email" class="contact__input">
+                    <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div> 
+                 <!-- /Form-email -->
+    
+                    <!-- <textarea class="form-control"   rows="5" placeholder="message">Message</textarea> -->
+                    <textarea id="message2" name="message" cols="0" rows="10" class="contact__input" placeholder="Message"></textarea>
+    
+                    <div class="error" id="err-message" style="display: none;">Please enter message</div>
+     
+                    <!-- <button type="submit" value="Send" class="contact__button button">Send</button> -->
+                    <input  id="send" type="submit" value="Send" class="contact__button button">
+
+                </form> <!-- /form -->
+            </div> <!-- end col -->
+    
+    </section>
+<!-- 
+
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Contact</h2>
+
+                <div class="contact__container bd-grid">
+                    <form action="" class="contact__form">
+                        <input type="text" placeholder="Name" class="contact__input">
+                        <input type="mail" placeholder="Email" class="contact__input">
+                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                        <input type="button" value="Send" class="contact__button button">
+                    </form>
+                </div>
+            </section> -->
+
+            <script src="{% static 'js/bot.js' %}"></script>
+
+        
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Jijue</p>
+            <div class="footer__social">
+                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <p class="footer__copy">&#169; Jijue | All rigths reserved | Privacy & Policy</p>
+        </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'jscript/bootstrap.js' %}"></script>
+    
+    
+    </body>
+</html>

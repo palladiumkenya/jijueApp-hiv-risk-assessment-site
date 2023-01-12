@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+        <link href="{% static 'js/main.js' %}">
+
+
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Referral</title>
+
+    </head>
+    <body>
+
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Jijue</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+
+
+            <section class="contact section" id="contact">
+              <h2  class="section-title">Referral form</h2>
+              <h4 style="text-align: center;" >Enter the details of the person you would like to refer here</h4>
+              <div class="contact__container bd-grid">
+                  <form role="form" method="POST" class="contact__form" action="">
+                  {% csrf_token %}
+                      <input type="text" id="name2" placeholder="Name" name="name" class="contact__input" required>
+                      
+                      <input id="phonenumber" name="phonenumber" type="text" placeholder="Phone number" class="contact__input" required>
+
+                      <input  id="send" type="submit" value="Send Message" class="contact__button button">
+  
+                  </form> 
+              </div> 
+      
+      </section>
+
+          </main>
+
+
+        
+ <!--===== FOOTER =====-->
+ <footer class="footer">
+  <p class="footer__title">Jijue</p>
+  <div class="footer__social">
+      <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+      <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+      <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+      
+  </div>
+  <p class="footer__copy">&#169; Jijue | All rigths reserved | Privacy & Policy </p>
+</footer>
+
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src=""></script>
+    
+    
+    </body>
+</html>
+
+
+
+
+
+

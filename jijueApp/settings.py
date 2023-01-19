@@ -120,7 +120,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 
-STATICFILES_DIRS =[
+STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
@@ -138,5 +138,3 @@ EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = config("EADDRESS")
 EMAIL_HOST_USER = "austinjuniour4@gmail.com"
 EMAIL_HOST_PASSWORD = "qzplfkkdpzdyeaoa"
-
-

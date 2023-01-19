@@ -1,12 +1,14 @@
+from twilio.rest import Client
 from django.db import models
 from django.http import request
 
 # Create your models here.
 
+
 class PredResults(models.Model):
     age = models.PositiveBigIntegerField()
     gender = models.PositiveBigIntegerField()
-    county =  models.CharField(max_length=100)
+    county = models.CharField(max_length=100)
     maritalStatus = models.PositiveBigIntegerField()
     coupleDiscordant = models.PositiveBigIntegerField()
     SexWithWoman = models.CharField(max_length=256)
@@ -21,12 +23,10 @@ class PredResults(models.Model):
     rapevictim = models.CharField(max_length=100)
     HIVPrEP = models.CharField(max_length=100)
     y_pred = models.CharField(max_length=30)
-    
-    
+    date = models.DateField(auto_now_add=True)
+
     def __str__(self):
         return self.y_pred
-
-
 
 
 # Model for apppointment
@@ -43,24 +43,21 @@ class Appointment(models.Model):
 
     def __str__(self):
         return self.first_name
-    
+
     class Meta:
         ordering = ["-sent_date"]
 
 
-
-
 # Message Handling Model
 
-from twilio.rest import Client
 
 class Message(models.Model):
     name = models.CharField(max_length=100)
     phonenumber = models.CharField(max_length=100)
+    sent_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.name
-    
 
     def save(self, *args, **kwargs):
         account_sid = 'AC70ddd96f0b8b5d27828a2f9b8b34f125'
@@ -68,11 +65,10 @@ class Message(models.Model):
         client = Client(account_sid, auth_token)
 
         message = client.messages.create(
-            body = f"Dear {self.name}, we would like to invite you for free HIV risk assessment. Kindly visit our site https://jijue.com",
-            from_ = '+13853965642',
-            to = {self.phonenumber}
+            body=f"Dear {self.name}, we would like to invite you for free HIV risk assessment. Kindly visit our site https://jijue.com",
+            from_='+13853965642',
+            to={self.phonenumber}
         )
-        
+
         print(message.sid)
         return super().save(*args, **kwargs)
-

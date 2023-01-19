@@ -14,7 +14,7 @@ from django.contrib.auth import authenticate, login, logout
 
 from django.http import HttpResponse
 
-#imports
+# imports
 from django.shortcuts import render
 from sklearn.tree import DecisionTreeClassifier
 from xgboost import XGBRegressor
@@ -36,15 +36,8 @@ from django.template import Context
 from django.template.loader import render_to_string, get_template
 
 
-
-
-
-
 # Importing the ML model.
 model = load('./savedModels/G3model.joblib')
-
-
-
 
 
 # App views here.
@@ -66,10 +59,11 @@ def predictor(request):
         sti = request.POST['sti']
         rapevictim = request.POST['rapevictim']
         HIVPrEP = request.POST['HIVPrEP']
-        y_pred = model.predict([[age,gender,maritalStatus,coupleDiscordant,sw,pwid,testedBefore,presumedTB,treatmentTB]])
+        y_pred = model.predict(
+            [[age, gender, maritalStatus, coupleDiscordant, sw, pwid, testedBefore, presumedTB, treatmentTB]])
         if y_pred <= 0.09:
             y_pred = 'LOW'
-        
+
         elif y_pred > 0.1 or y_pred <= 0.2:
             y_pred = 'MODERATE'
 
@@ -78,38 +72,26 @@ def predictor(request):
         else:
             y_pred = 'HIGH and should test now'
 
-
         PredResults.objects.create(age=age,
-                                gender=gender,
-                                county=county,
-                                maritalStatus=maritalStatus,
-                                coupleDiscordant=coupleDiscordant,
-                                SexWithWoman=SexWithWoman,
-                                SexWithMan=SexWithMan,
-                                condom_use=condom_use,
-                                sw=sw,
-                                pwid=pwid,
-                                testedBefore=testedBefore,
-                                presumedTB=presumedTB,
-                                treatmentTB=treatmentTB,
-                                sti=sti,
-                                rapevictim=rapevictim,
-                                HIVPrEP=HIVPrEP,
-                                y_pred = y_pred)
+                                   gender=gender,
+                                   county=county,
+                                   maritalStatus=maritalStatus,
+                                   coupleDiscordant=coupleDiscordant,
+                                   SexWithWoman=SexWithWoman,
+                                   SexWithMan=SexWithMan,
+                                   condom_use=condom_use,
+                                   sw=sw,
+                                   pwid=pwid,
+                                   testedBefore=testedBefore,
+                                   presumedTB=presumedTB,
+                                   treatmentTB=treatmentTB,
+                                   sti=sti,
+                                   rapevictim=rapevictim,
+                                   HIVPrEP=HIVPrEP,
+                                   y_pred=y_pred)
 
-        return render(request, 'result.html',{'result' : y_pred})
+        return render(request, 'result.html', {'result': y_pred})
     return render(request, 'main.html')
-
-
-#nutrition-tips = [
-#    {'id': 1, 'name':'Health'},
-#    {'id': 2, 'name':'Fitness'},
-#    {'id': 3, 'name':'Kids'},
-#    {'id': 4, 'name':'Seniors'},
-#    {'id': 5, 'name':'Men'},
-#    {'id': 6, 'name':'Women'},
-#    {'id': 7, 'name':'Food Safety'},
-#]
 
 
 def imagePage(request):
@@ -119,42 +101,51 @@ def imagePage(request):
 def indexPage(request):
     return render(request, 'base/index.html')
 
+
 def welcomePage(request):
     return render(request, 'base/welcome.html')
+
 
 def disclaimerPage(request):
     return render(request, 'base/disclaimer.html')
 
+
 def declinePage(request):
     return render(request, 'base/index.html')
+
 
 def acceptPage(request):
     return render(request, 'base/main.html')
 
+
 def vctPage(request):
     return render(request, 'base/vct.html')
+
 
 def nutritionPage(request):
     return render(request, 'base/nutrition.html')
 
+
 def statPage(request):
     return render(request, 'statistics.html')
+
 
 def MsgPage(request):
     return render(request, 'referral.html')
 
 # Appointment views here.
 
+
 class HomeTemplateView(TemplateView):
     template_name = "index-2.html"
-    
+
     def post(self, request):
         name = request.POST.get("name")
         email = request.POST.get("email")
         message = request.POST.get("message")
 
         email = EmailMessage(
-            subject= f"{name} from doctor.",
+            subject=f"{name} from doctor.",
             body=message,
             from_email=settings.EMAIL_HOST_USER,
             to=[settings.EMAIL_HOST_USER],
@@ -162,8 +153,6 @@ class HomeTemplateView(TemplateView):
         )
         email.send()
         return HttpResponse("Email sent successfully!")
-
-
 
 
 class AppointmentTemplateView(TemplateView):
@@ -186,7 +175,8 @@ class AppointmentTemplateView(TemplateView):
 
         appointment.save()
 
-        messages.add_message(request, messages.SUCCESS, f"Thanks {fname} for making an appointment, we will email you ASAP!")
+        messages.add_message(request, messages.SUCCESS,
+                             f"Thanks {fname} for making an appointment, we will email you ASAP!")
         return HttpResponseRedirect(request.path)
 
 
@@ -197,7 +187,6 @@ class ManageAppointmentTemplateView(ListView):
     login_required = True
     paginate_by = 3
 
-
     def post(self, request):
         date = request.POST.get("date")
         appointment_id = request.POST.get("appointment-id")
@@ -207,8 +196,8 @@ class ManageAppointmentTemplateView(ListView):
         appointment.save()
 
         data = {
-            "fname":appointment.first_name,
-            "date":date,
+            "fname": appointment.first_name,
+            "date": date,
         }
 
         message = get_template('email.html').render(data)
@@ -221,43 +210,27 @@ class ManageAppointmentTemplateView(ListView):
         email.content_subtype = "html"
         email.send()
 
-        messages.add_message(request, messages.SUCCESS, f"You accepted the appointment of {appointment.first_name}")
+        messages.add_message(request, messages.SUCCESS,
+                             f"You accepted the appointment of {appointment.first_name}")
         return HttpResponseRedirect(request.path)
 
-
-    def get_context_data(self,*args, **kwargs):
+    def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         appointments = Appointment.objects.all()
-        context.update({   
-            "title":"Manage Appointments"
+        context.update({
+            "title": "Manage Appointments"
         })
         return context
 
 
-
-
-
-#Message Referral
+# Message Referral
 
 def sent(request):
     if request.method == 'POST':
         name = request.POST['name']
         phonenumber = request.POST['phonenumber']
-     
-        Message.objects.create(name=name,phonenumber=phonenumber)
 
-        return HttpResponse("Message sent successfully!")
-    return render(request, 'referral.html')
-
-"""
-def send_message(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        phonenumber = request.POST.get('phonenumber')
-     
         Message.objects.create(name=name, phonenumber=phonenumber)
 
         return HttpResponse("Message sent successfully!")
-    return render(request, 'referral.html')"""
-
-
+    return render(request, 'referral.html')

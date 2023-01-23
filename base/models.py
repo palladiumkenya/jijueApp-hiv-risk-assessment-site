@@ -23,7 +23,7 @@ class PredResults(models.Model):
     rapevictim = models.CharField(max_length=100)
     HIVPrEP = models.CharField(max_length=100)
     y_pred = models.CharField(max_length=30)
-    date = models.DateField(auto_now_add=True)
+    date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.y_pred
@@ -54,7 +54,7 @@ class Appointment(models.Model):
 class Message(models.Model):
     name = models.CharField(max_length=100)
     phonenumber = models.CharField(max_length=100)
-    sent_date = models.DateField(auto_now_add=True)
+    sent_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

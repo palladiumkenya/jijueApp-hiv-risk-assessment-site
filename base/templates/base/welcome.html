@@ -40,20 +40,31 @@
                 <h2 class="section-title">WELCOME TO JIJUE</h2>
 
                 <div class="contact__container bd-grid">
+                    <p>
                     Jijue website was created by a multidisciplinary team of students from Jomo Kenyatta University
                     of Agriculture and Technology. The aim of the web app is to provide a user-friendly platform
                     for individuals to assess their HIV risk and connect them to Health Facilities for further management.
+                    <br>
+                    <br>
                     Jijue is a website application with an inbuilt Machine-learning model designed to predict a person’s risk of turning HIV positive. 
                     Risk is categorized as low, moderate or high risk after which recommendations are given based on a user’s risk.
                     Additionally, we offer nutritional tips, current statistics and VCT tracks of all available health facilities available within a user’s location. 
                     Our users also benefit from booking appointments to nearest VCTs of their choice at the comfort of their laptop or mobile device.
                     </P>
+                    
                     <div class="welcomeBtn"> <a href="{% url 'disclaimer-page' %}">Check risk</a></div>
+
                 </div>
             </section>
         </main>
+    </body>
 
-        
+<!--===== SCROLL REVEAL =====-->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!--===== MAIN JS =====-->
+<script src="{% static 'js/main.js' %}"></script>
+
         <!--===== FOOTER =====-->
         <footer class="footer">
             <p class="footer__title">Jijue</p>
@@ -64,13 +75,5 @@
             </div>
             <p class="footer__copy">&#169; Jijue | All rigths reserved | Privacy & Policy</p>
         </footer>
-
-
-
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
-
-        <!--===== MAIN JS =====-->
-        <script src="{% static 'js/main.js' %}"></script>
-    </body>
+    
 </html>

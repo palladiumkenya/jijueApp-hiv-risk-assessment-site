@@ -43,6 +43,18 @@
             <section class="contact section" id="contact">
               <h2  class="section-title">Referral form</h2>
               <h4 style="text-align: center;" >Enter the details of the person you would like to refer here</h4>
+
+                {% if messages %}
+                <div class="contact__container bd-grid">
+                    <div class="contact__container bd-grid">
+                    {% for message in messages %}
+                        <div class="card-title" style="color: green;">{{message}} </div>
+                    {% endfor %}
+                    </div>
+                </div> 
+                {% endif %}
+   
+
               <div class="contact__container bd-grid">
                   <form role="form" method="POST" class="contact__form" action="">
                   {% csrf_token %}

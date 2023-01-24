@@ -232,5 +232,8 @@ def sent(request):
 
         Message.objects.create(name=name, phonenumber=phonenumber)
 
-        return HttpResponse("Message sent successfully!")
+        messages.add_message(request, messages.SUCCESS,
+                             f"Thank you referring {name} for HIV self risk assessment. The message has been sent successfully!")
+        return HttpResponseRedirect(request.path)
+
     return render(request, 'referral.html')

@@ -19,7 +19,7 @@ from django.shortcuts import render
 from sklearn.tree import DecisionTreeClassifier
 from xgboost import XGBRegressor
 from joblib import load
-from .models import PredResults, Message
+from .models import PredResults, Message, resultMail
 from .forms import DataForm, MessageForm
 
 
@@ -94,6 +94,21 @@ def predictor(request):
     return render(request, 'main.html')
 
 
+# class PredictorTemplateView(TemplateView):
+#     template_name = "result.html"
+
+#     def send_result(request):
+#         if request.method == 'POST':
+#             senders_email = request.POST.get('mail')
+
+#             resultMail.objects.create(email=senders_email)
+
+#             messages.add_message(request, messages.SUCCESS,
+#                                  f"Your results has been sent successfully!")
+#             return HttpResponseRedirect(request.path)
+#         return render(request, 'result.html')
+
+
 def imagePage(request):
     return render(request, 'base/BAP.html')
 
@@ -133,8 +148,8 @@ def statPage(request):
 def MsgPage(request):
     return render(request, 'referral.html')
 
-# Appointment views here.
 
+# Appointment views here.
 
 class HomeTemplateView(TemplateView):
     template_name = "index-2.html"
@@ -176,7 +191,7 @@ class AppointmentTemplateView(TemplateView):
         appointment.save()
 
         messages.add_message(request, messages.SUCCESS,
-                             f"Thanks {fname} for making an appointment, we will email you ASAP!")
+                             f"Thanks {fname} for making an appointment, we will email you as soon as possible!")
         return HttpResponseRedirect(request.path)
 
 
@@ -233,7 +248,7 @@ def sent(request):
         Message.objects.create(name=name, phonenumber=phonenumber)
 
         messages.add_message(request, messages.SUCCESS,
-                             f"Thank you referring {name} for HIV self risk assessment. The message has been sent successfully!")
+                             f"Thank you for referring {name} for HIV self risk assessment. The message has been sent successfully!")
         return HttpResponseRedirect(request.path)
 
     return render(request, 'referral.html')

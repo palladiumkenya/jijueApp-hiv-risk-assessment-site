@@ -29,6 +29,16 @@ class PredResults(models.Model):
         return self.y_pred
 
 
+# sent results model
+class resultMail(models.Model):
+    email = models.CharField(max_length=256)
+    result = models.CharField(max_length=256)
+    sent_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email
+
+
 # Model for apppointment
 
 class Appointment(models.Model):

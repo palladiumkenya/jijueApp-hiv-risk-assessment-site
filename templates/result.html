@@ -113,6 +113,17 @@
             <section class="contact section" id="contact">
                 <h2  class="section-title">Get results</h2>
                 <h4 style="text-align: center;" >Would you like an email copy of your results? </h4>
+                
+                {% if messages %}
+                <div class="contact__container bd-grid">
+                    <div class="contact__container bd-grid">
+                    {% for message in messages %}
+                        <div class="card-title" style="color: green;">{{message}} </div>
+                    {% endfor %}
+                    </div>
+                </div> 
+                {% endif %}
+
                 <div class="contact__container bd-grid">
                     <form role="form" method="" class="contact__form" action="">
                     

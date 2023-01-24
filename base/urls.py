@@ -35,4 +35,6 @@ urlpatterns = [
     # path('predictor/message/', views.MsgPage, name = 'message-page'),
 
     path('predictor/message/', views.sent, name="sent"),
+
+    #     path('sent/', PredictorTemplateView.as_view(), name='send_result')
 ]

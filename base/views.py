@@ -70,7 +70,7 @@ def predictor(request):
         elif y_pred > 0.21 or y_pred <= 0.6:
             y_pred = 'HIGH'
         else:
-            y_pred = 'HIGH and should test now'
+            y_pred = 'HIGH and SHOULD TEST NOW'
 
         PredResults.objects.create(age=age,
                                    gender=gender,
@@ -139,20 +139,20 @@ def MsgPage(request):
 class HomeTemplateView(TemplateView):
     template_name = "index-2.html"
 
-    def post(self, request):
-        name = request.POST.get("name")
-        email = request.POST.get("email")
-        message = request.POST.get("message")
+    # def post(self, request):
+    #     name = request.POST.get("name")
+    #     email = request.POST.get("email")
+    #     message = request.POST.get("message")
 
-        email = EmailMessage(
-            subject=f"{name} from doctor.",
-            body=message,
-            from_email=settings.EMAIL_HOST_USER,
-            to=[settings.EMAIL_HOST_USER],
-            reply_to=[email]
-        )
-        email.send()
-        return HttpResponse("Email sent successfully!")
+    #     email = EmailMessage(
+    #         subject=f"{name} from doctor.",
+    #         body=message,
+    #         from_email=settings.EMAIL_HOST_USER,
+    #         to=[settings.EMAIL_HOST_USER],
+    #         reply_to=[email]
+    #     )
+    #     email.send()
+    #     return HttpResponse("Email sent successfully!")
 
 
 class AppointmentTemplateView(TemplateView):

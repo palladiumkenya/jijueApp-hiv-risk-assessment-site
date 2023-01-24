@@ -377,41 +377,20 @@
             <div class="contact__container bd-grid">
                 <form role="form" name="ajax-form" id="ajax-form" method="post" class="contact__form" action="">
                 {% csrf_token %}
-                    <!-- <input class="form-control" id="name2" name="name" type="text" placeholder="name"> -->
-                    <input type="text" id="name2" placeholder="Name" name="name" class="contact__input">
-                    <div class="error" id="err-name" style="display: none;">Please enter name</div>
-    
-                    <!-- <input class="form-control"  type="text" placeholder="email"> -->
-                    <input id="email2" name="email" type="mail" placeholder="Email" class="contact__input">
-                    <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div> 
-                 <!-- /Form-email -->
-    
-                    <!-- <textarea class="form-control"   rows="5" placeholder="message">Message</textarea> -->
-                    <textarea id="message2" name="message" cols="0" rows="10" class="contact__input" placeholder="Message"></textarea>
-    
-                    <div class="error" id="err-message" style="display: none;">Please enter message</div>
-     
-                    <!-- <button type="submit" value="Send" class="contact__button button">Send</button> -->
-                    <input  id="send" type="submit" value="Send" class="contact__button button">
+                <input name = "name" type="text" placeholder="Full Name" class="contact__input" required>
+                
+                <input name="email" type="mail" placeholder="Email" class="contact__input" required>
+
+                <input name="subject" type="text" placeholder="Subject" class="contact__input" required>
+      
+                <textarea name="message" cols="0" rows="10" class="contact__input" placeholder="Message" required></textarea>
+
+                <input type="submit" value="Send Message" class="contact__button button">
 
                 </form> <!-- /form -->
             </div> <!-- end col -->
     
     </section>
-<!-- 
-
-            <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
-
-                <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Send" class="contact__button button">
-                    </form>
-                </div>
-            </section> -->
 
             <script src="{% static 'js/bot.js' %}"></script>
 

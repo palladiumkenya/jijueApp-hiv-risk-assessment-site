@@ -372,7 +372,7 @@
 
             <!--===== CONTACT =====-->
 
-        <section class="contact section" id="contact">
+         <!-- <section class="contact section" id="contact">
             <h2 class="section-title">Contact</h2>
             <div class="contact__container bd-grid">
                 <form role="form" name="ajax-form" id="ajax-form" method="post" class="contact__form" action="">
@@ -387,10 +387,40 @@
 
                 <input type="submit" value="Send Message" class="contact__button button">
 
-                </form> <!-- /form -->
-            </div> <!-- end col -->
+                </form>
+            </div>
     
-    </section>
+        </section> -->
+
+        <section class="contact section" id="contact">
+            <h2 class="section-title">Contact</h2>
+            
+            {% if messages %}
+
+            <div class="contact__container bd-grid">
+                <div class="contact__container bd-grid">
+                {% for message in messages %}
+                        <div class="card-title" style="color: green;">{{message}} </div>
+                    {% endfor %}
+                </div>
+            </div> 
+            {% endif %}
+    
+            <div class="contact__container bd-grid">
+                
+                <form role="form" name="ajax-form" id="ajax-form" method="POST" class="contact__form" action="">          
+                    {% csrf_token %}
+                    <input name = "name" type="text" placeholder="Full Name" class="contact__input" required>
+                    
+                    <input name="email" type="mail" placeholder="Email" class="contact__input" required>
+        
+                    <textarea name="message" cols="0" rows="10" class="contact__input" placeholder="Message" required></textarea>
+                    
+                    <input type="submit" value="Send Message" class="contact__button button">
+
+                </form>
+            </div>
+        </section>
 
             <script src="{% static 'js/bot.js' %}"></script>
 

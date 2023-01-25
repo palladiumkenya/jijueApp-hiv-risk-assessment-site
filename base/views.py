@@ -19,8 +19,8 @@ from django.shortcuts import render
 from sklearn.tree import DecisionTreeClassifier
 from xgboost import XGBRegressor
 from joblib import load
-from .models import PredictedResult, Message, resultMail, ContactMessage
-from .forms import DataForm, MessageForm
+from .models import PredictedResult, ReferralMessage, resultMail, ContactMessage
+from .forms import DataForm
 
 
 # Appointment imports
@@ -238,13 +238,13 @@ class ManageAppointmentTemplateView(ListView):
 
 class MessageView(TemplateView):
     template_name = "referral.html"
-    model = Message
+    model = ReferralMessage
 
     def post(self, request):
         name = request.POST.get('name')
         phonenumber = request.POST.get('phonenumber')
 
-        Message.objects.create(
+        ReferralMessage.objects.create(
             name=name, phonenumber=phonenumber)
 
         messages.add_message(request, messages.SUCCESS,

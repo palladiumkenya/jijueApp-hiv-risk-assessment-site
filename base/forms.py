@@ -1,5 +1,5 @@
 from django import forms
-from .models import PredictedResult, Message
+from .models import PredictedResult
 
 
 class DataForm(forms.ModelForm):
@@ -7,9 +7,3 @@ class DataForm(forms.ModelForm):
         model = PredictedResult
         fields = ['age', 'gender', 'county', 'maritalStatus', 'coupleDiscordant', 'SexWithWoman', 'SexWithMan', 'condom_use',
                   'sw', 'pwid', 'testedBefore', 'presumedTB', 'treatmentTB', 'sti', 'rapevictim', 'HIVPrEP']
-
-
-class MessageForm(forms.ModelForm):
-    class Meta:
-        model = Message
-        fields = ['name', 'phonenumber']

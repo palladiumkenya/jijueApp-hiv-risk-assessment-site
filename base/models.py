@@ -75,7 +75,7 @@ class Appointment(models.Model):
 # Message Handling Model
 
 
-class Message(models.Model):
+class ReferralMessage(models.Model):
     name = models.CharField(max_length=100)
     phonenumber = models.CharField(max_length=100)
     sent_date = models.DateTimeField(auto_now_add=True)

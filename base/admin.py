@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Appointment, PredictedResult, Message, resultMail, ContactMessage
+from .models import Appointment, PredictedResult, ReferralMessage, resultMail, ContactMessage
 
 # Register your models here.
 
@@ -64,4 +64,4 @@ class MesssageAdmin(admin.ModelAdmin):
                     'sent_date')
 
 
-admin.site.register(Message, MesssageAdmin)
+admin.site.register(ReferralMessage, MesssageAdmin)

@@ -35,8 +35,37 @@ import datetime
 from django.template import Context
 from django.template.loader import render_to_string, get_template
 
+# App views here
 
-# Importing the ML model.
+# contact form
+
+
+def contactView(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        # contactMessage.objects.create(
+        #     name=name, email=email, subject=subject, message=message)
+
+        email = EmailMessage(
+            subject=f"{name} from JijueApp",
+            body=message,
+            from_email=settings.EMAIL_HOST_USER,
+            to=[settings.EMAIL_HOST_USER],
+            reply_to=[email]
+        )
+        email.send()
+
+        messages.add_message(request, messages.SUCCESS,
+                             f"Thanks {name} for contacting us, we will get back to you as soon as possible!")
+        return HttpResponseRedirect(request.path)
+
+    return render(request, 'base/index.html')
+
+
+# Importing the ML model for prediction.
 model = load('./savedModels/G3model.joblib')
 
 

@@ -67,7 +67,7 @@ class Home(TemplateView):
 model = load('./savedModels/G3model.joblib')
 
 
-# App views here.
+# Predictor views here.
 def predictor(request):
     if request.method == 'POST':
         age = request.POST['age']
@@ -124,11 +124,11 @@ def predictor(request):
 # class PredictorTemplateView(TemplateView):
 #     template_name = "result.html"
 
-#     def send_result(request):
+#     def post(request):
 #         if request.method == 'POST':
 #             senders_email = request.POST.get('mail')
 
-#             resultMail.objects.create(email=senders_email)
+#             #resultMail.objects.create(email=senders_email)
 
 #             messages.add_message(request, messages.SUCCESS,
 #                                  f"Your results has been sent successfully!")
@@ -155,12 +155,8 @@ def nutritionPage(request):
 def statPage(request):
     return render(request, 'statistics.html')
 
-
-def MsgPage(request):
-    return render(request, 'referral.html')
-
-
 # Appointment views here.
+
 
 class HomeAppointment(TemplateView):
     template_name = "homeappointment.html"

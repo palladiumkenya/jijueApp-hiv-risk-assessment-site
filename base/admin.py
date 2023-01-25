@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Appointment, PredictedResult, Message, resultMail
+from .models import Appointment, PredictedResult, Message, resultMail, ContactMessage
 
 # Register your models here.
 
@@ -28,6 +28,18 @@ class DataAdmin(admin.ModelAdmin):
 
 
 admin.site.register(PredictedResult, DataAdmin)
+
+
+# register contact form
+
+class contactForm(admin.ModelAdmin):
+    list_display = ('name',
+                    'email',
+                    'message',
+                    'sent_date')
+
+
+admin.site.register(ContactMessage, contactForm)
 
 # sent results register
 

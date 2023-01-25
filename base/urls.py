@@ -1,10 +1,10 @@
 from django.urls import path
 from . import views
-from .views import HomeTemplateView, AppointmentTemplateView, ManageAppointmentTemplateView, statPage
+from .views import Home, HomeTemplateView, AppointmentTemplateView, ManageAppointmentTemplateView, statPage
 
 
 urlpatterns = [
-    path('', views.indexPage, name='index-page'),
+    path('', Home.as_view(), name='main'),
 
     path("stat-page/", statPage, name="stat-page"),
 

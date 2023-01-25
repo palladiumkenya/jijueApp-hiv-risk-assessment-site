@@ -37,6 +37,13 @@ from django.template.loader import render_to_string, get_template
 
 # App views here
 
+
+class Home(TemplateView):
+    template_name = "base/index.html"
+
+    # def indexPage(request):
+    #     return render(request, 'base/index.html')
+
 # contact form
 
 

@@ -6,6 +6,8 @@ from .views import HomeTemplateView, AppointmentTemplateView, ManageAppointmentT
 urlpatterns = [
     path('', views.indexPage, name='index-page'),
 
+    path("stat-page/", statPage, name="stat-page"),
+
     path('vct/', views.vctPage, name='vct-page'),
 
     path('nutrition/', views.nutritionPage, name='nutrition-page'),
@@ -26,7 +28,7 @@ urlpatterns = [
     path("manage-appointments/",
          ManageAppointmentTemplateView.as_view(), name="manage"),
 
-    path("stat-page/", statPage, name="stat-page"),
+
 
     # path('predictor/message/', views.MsgPage, name = 'message-page'),
 

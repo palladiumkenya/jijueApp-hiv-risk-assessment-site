@@ -56,7 +56,7 @@
    
 
               <div class="contact__container bd-grid">
-                  <form role="form" method="POST" class="contact__form" action="">
+                  <form role="form" method="POST" class="contact__form" action="{% url 'message' %}">
                   {% csrf_token %}
                       <input type="text" id="name2" placeholder="Name" name="name" class="contact__input" required>
                       

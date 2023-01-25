@@ -5,7 +5,7 @@ from django.http import request
 # Create your models here.
 
 
-class PredResults(models.Model):
+class PredictedResult(models.Model):
     age = models.PositiveBigIntegerField()
     gender = models.PositiveBigIntegerField()
     county = models.CharField(max_length=100)

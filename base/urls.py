@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import Home, HomeTemplateView, AppointmentTemplateView, ManageAppointmentTemplateView, statPage
+from .views import Home, MessageView, HomeAppointment, AppointmentTemplateView, ManageAppointmentTemplateView, statPage
 
 
 urlpatterns = [
@@ -18,9 +18,9 @@ urlpatterns = [
 
     path('predictor/', views.predictor, name='predictor'),
 
-    path('predictor/message/', views.sent, name="sent"),
+    path('message/', MessageView.as_view(), name='message'),
 
-    path('index-2/',  HomeTemplateView.as_view(), name="home"),
+    path('appointment',  HomeAppointment.as_view(), name="home"),
 
     path("make-an-appointment/",
          AppointmentTemplateView.as_view(), name="appointment"),

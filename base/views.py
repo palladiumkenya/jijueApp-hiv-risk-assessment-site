@@ -19,7 +19,7 @@ from django.shortcuts import render
 from sklearn.tree import DecisionTreeClassifier
 from xgboost import XGBRegressor
 from joblib import load
-from .models import PredResults, Message, resultMail
+from .models import PredictedResult, Message, resultMail
 from .forms import DataForm, MessageForm
 
 
@@ -41,20 +41,14 @@ from django.template.loader import render_to_string, get_template
 class Home(TemplateView):
     template_name = "base/index.html"
 
-    # def indexPage(request):
-    #     return render(request, 'base/index.html')
-
 # contact form
-
-
-def contactView(request):
-    if request.method == 'POST':
+    def post(self, request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         message = request.POST.get('message')
 
         # contactMessage.objects.create(
-        #     name=name, email=email, subject=subject, message=message)
+        #     name=name, email=email, message=message)
 
         email = EmailMessage(
             subject=f"{name} from JijueApp",
@@ -68,8 +62,6 @@ def contactView(request):
         messages.add_message(request, messages.SUCCESS,
                              f"Thanks {name} for contacting us, we will get back to you as soon as possible!")
         return HttpResponseRedirect(request.path)
-
-    return render(request, 'base/index.html')
 
 
 # Importing the ML model for prediction.
@@ -108,23 +100,23 @@ def predictor(request):
         else:
             y_pred = 'HIGH and SHOULD TEST NOW'
 
-        PredResults.objects.create(age=age,
-                                   gender=gender,
-                                   county=county,
-                                   maritalStatus=maritalStatus,
-                                   coupleDiscordant=coupleDiscordant,
-                                   SexWithWoman=SexWithWoman,
-                                   SexWithMan=SexWithMan,
-                                   condom_use=condom_use,
-                                   sw=sw,
-                                   pwid=pwid,
-                                   testedBefore=testedBefore,
-                                   presumedTB=presumedTB,
-                                   treatmentTB=treatmentTB,
-                                   sti=sti,
-                                   rapevictim=rapevictim,
-                                   HIVPrEP=HIVPrEP,
-                                   y_pred=y_pred)
+        PredictedResult.objects.create(age=age,
+                                       gender=gender,
+                                       county=county,
+                                       maritalStatus=maritalStatus,
+                                       coupleDiscordant=coupleDiscordant,
+                                       SexWithWoman=SexWithWoman,
+                                       SexWithMan=SexWithMan,
+                                       condom_use=condom_use,
+                                       sw=sw,
+                                       pwid=pwid,
+                                       testedBefore=testedBefore,
+                                       presumedTB=presumedTB,
+                                       treatmentTB=treatmentTB,
+                                       sti=sti,
+                                       rapevictim=rapevictim,
+                                       HIVPrEP=HIVPrEP,
+                                       y_pred=y_pred)
 
         return render(request, 'result.html', {'result': y_pred})
     return render(request, 'main.html')
@@ -171,23 +163,8 @@ def MsgPage(request):
 
 # Appointment views here.
 
-class HomeTemplateView(TemplateView):
-    template_name = "index-2.html"
-
-    # def post(self, request):
-    #     name = request.POST.get("name")
-    #     email = request.POST.get("email")
-    #     message = request.POST.get("message")
-
-    #     email = EmailMessage(
-    #         subject=f"{name} from doctor.",
-    #         body=message,
-    #         from_email=settings.EMAIL_HOST_USER,
-    #         to=[settings.EMAIL_HOST_USER],
-    #         reply_to=[email]
-    #     )
-    #     email.send()
-    #     return HttpResponse("Email sent successfully!")
+class HomeAppointment(TemplateView):
+    template_name = "homeappointment.html"
 
 
 class AppointmentTemplateView(TemplateView):
@@ -258,17 +235,19 @@ class ManageAppointmentTemplateView(ListView):
         return context
 
 
-# Message Referral
+# Referral message view here
 
-def sent(request):
-    if request.method == 'POST':
-        name = request.POST['name']
-        phonenumber = request.POST['phonenumber']
+class MessageView(TemplateView):
+    template_name = "referral.html"
+    model = Message
 
-        Message.objects.create(name=name, phonenumber=phonenumber)
+    def post(self, request):
+        name = request.POST.get('name')
+        phonenumber = request.POST.get('phonenumber')
+
+        Message.objects.create(
+            name=name, phonenumber=phonenumber)
 
         messages.add_message(request, messages.SUCCESS,
                              f"Thank you for referring {name} for HIV self risk assessment. The message has been sent successfully!")
         return HttpResponseRedirect(request.path)
-
-    return render(request, 'referral.html')

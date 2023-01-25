@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Appointment, PredResults, Message, resultMail
+from .models import Appointment, PredictedResult, Message, resultMail
 
 # Register your models here.
 
@@ -27,7 +27,7 @@ class DataAdmin(admin.ModelAdmin):
                     'date')
 
 
-admin.site.register(PredResults, DataAdmin)
+admin.site.register(PredictedResult, DataAdmin)
 
 # sent results register
 

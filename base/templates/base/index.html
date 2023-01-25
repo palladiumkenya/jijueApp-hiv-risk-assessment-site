@@ -408,7 +408,7 @@
     
             <div class="contact__container bd-grid">
                 
-                <form role="form" name="ajax-form" id="ajax-form" method="POST" class="contact__form" action="">          
+                <form role="form" name="ajax-form" id="ajax-form" method="POST" class="contact__form" action="{% url 'main' %}">          
                     {% csrf_token %}
                     <input name = "name" type="text" placeholder="Full Name" class="contact__input" required>
                     

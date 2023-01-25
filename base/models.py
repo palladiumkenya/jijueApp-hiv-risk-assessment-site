@@ -28,8 +28,22 @@ class PredictedResult(models.Model):
     def __str__(self):
         return self.y_pred
 
+# Contact form model
+
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=256)
+    email = models.CharField(max_length=256)
+    message = models.CharField(max_length=512)
+    sent_date = models.DateTimeField(auto_now_add=True)
+
+
+def __str__(self):
+    return self.name
 
 # sent results model
+
+
 class resultMail(models.Model):
     email = models.CharField(max_length=256)
     result = models.CharField(max_length=256)

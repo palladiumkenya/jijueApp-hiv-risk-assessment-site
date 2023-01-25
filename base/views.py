@@ -19,7 +19,7 @@ from django.shortcuts import render
 from sklearn.tree import DecisionTreeClassifier
 from xgboost import XGBRegressor
 from joblib import load
-from .models import PredictedResult, Message, resultMail
+from .models import PredictedResult, Message, resultMail, ContactMessage
 from .forms import DataForm, MessageForm
 
 
@@ -47,8 +47,7 @@ class Home(TemplateView):
         email = request.POST.get('email')
         message = request.POST.get('message')
 
-        # contactMessage.objects.create(
-        #     name=name, email=email, message=message)
+        ContactMessage.objects.create(name=name, email=email, message=message)
 
         email = EmailMessage(
             subject=f"{name} from JijueApp",

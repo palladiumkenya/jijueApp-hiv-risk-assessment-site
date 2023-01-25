@@ -6,21 +6,17 @@ from .views import HomeTemplateView, AppointmentTemplateView, ManageAppointmentT
 urlpatterns = [
     path('', views.indexPage, name='index-page'),
 
-    path('predictor/', views.predictor, name='predictor'),
+    path('vct/', views.vctPage, name='vct-page'),
+
+    path('nutrition/', views.nutritionPage, name='nutrition-page'),
 
     path('welcome/', views.welcomePage, name='welcome-page'),
 
     path('welcome/disclaimer/', views.disclaimerPage, name='disclaimer-page'),
 
-    path('', views.declinePage, name='decline'),
+    path('predictor/', views.predictor, name='predictor'),
 
-    path('welcome/disclaimer/accept', views.acceptPage, name='accept-page'),
-
-    path('vct/', views.vctPage, name='vct-page'),
-
-    path('nutrition/', views.nutritionPage, name='nutrition-page'),
-
-    path('image/', views.imagePage, name='image-page'),
+    path('predictor/message/', views.sent, name="sent"),
 
     path('index-2/',  HomeTemplateView.as_view(), name="home"),
 
@@ -34,7 +30,7 @@ urlpatterns = [
 
     # path('predictor/message/', views.MsgPage, name = 'message-page'),
 
-    path('predictor/message/', views.sent, name="sent"),
 
-    #     path('sent/', PredictorTemplateView.as_view(), name='send_result')
+
+    # path('sent/', PredictorTemplateView.as_view(), name='send_result')
 ]

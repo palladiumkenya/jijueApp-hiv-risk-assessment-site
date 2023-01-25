@@ -138,10 +138,6 @@ def predictor(request):
 #         return render(request, 'result.html')
 
 
-def imagePage(request):
-    return render(request, 'base/BAP.html')
-
-
 def indexPage(request):
     return render(request, 'base/index.html')
 
@@ -152,14 +148,6 @@ def welcomePage(request):
 
 def disclaimerPage(request):
     return render(request, 'base/disclaimer.html')
-
-
-def declinePage(request):
-    return render(request, 'base/index.html')
-
-
-def acceptPage(request):
-    return render(request, 'base/main.html')
 
 
 def vctPage(request):

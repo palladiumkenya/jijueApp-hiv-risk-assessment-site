@@ -145,10 +145,6 @@ def predictor(request):
 #         return render(request, 'result.html')
 
 
-def indexPage(request):
-    return render(request, 'base/index.html')
-
-
 def welcomePage(request):
     return render(request, 'base/welcome.html')
 

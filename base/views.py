@@ -93,7 +93,7 @@ def predictor(request):
             y_pred = 'LOW RISK'
 
         elif y_pred > 0.01 or y_pred <= 0.2:
-            y_pred = 'MODERATE RISK'
+            y_pred = 'MODERATE'
 
         elif y_pred > 0.21 or y_pred <= 0.6:
             y_pred = 'HIGH RISK'

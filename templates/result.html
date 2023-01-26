@@ -50,7 +50,7 @@
         </div>
             </section>
 
-            <!--===== CONTACT =====-->
+            <!--===== RISK REPORT =====-->
             <section class="contact section" id="contact">
                 <h2 class="section-title" style="font-size: 24px;">Risk Report</h2>
                     
@@ -62,6 +62,8 @@
                     <br>
         
                 </div>
+
+                <!--===== RECOMMENDATIONS =====-->
                
                 {% if result == 'LOW RISK' %}
                 <div class="contact__container bd-grid">
@@ -82,7 +84,7 @@
                 </div>
                 {% endif %}
 
-                {% if result == 'MODERATE RISK' %}
+                {% if result == 'MODERATE' %}
                 <div class="contact__container bd-grid">
                    <h4 style="color: hsl(224, 89%,60%);"> WHAT DOES IT MEAN TO BE MEDIUM RISK?</h4>
                     
@@ -108,13 +110,14 @@
                     <p>If you turn out to be negative after screening, it’s advisable to start on PrEP.</p>
                     <br>
   
-                    
-                    <h4 style="color: hsl(224, 89%,60%)">PREVENTION OF MOTHER-TO-CHILD TRANSMISSION</h4>
-                    <p>All women of reproductive age should be on contraceptive use to prevent unplanned pregnancies.</p>
-                    <p>You are advised to have frequent HIV and pregnancy self-test</p>
                   </div>
                 {% endif %}
-                
+                <div class="contact__container bd-grid">
+                    <h4 style="color: hsl(224, 89%,60%)">PREVENTION OF MOTHER-TO-CHILD TRANSMISSION</h4>
+                        <p>All women of reproductive age should be on contraceptive use to prevent unplanned pregnancies.</p>
+                        <p>You are advised to have frequent HIV and pregnancy self-test</p>
+                </div>
+                    
             </section>
             
 

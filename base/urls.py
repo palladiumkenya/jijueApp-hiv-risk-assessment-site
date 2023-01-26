@@ -30,7 +30,4 @@ urlpatterns = [
     path('manage-appointments/',
          ManageAppointmentTemplateView.as_view(), name='manage'),
 
-
-
-    # path('sent/', PredictorTemplateView.as_view(), name='send_result')
 ]

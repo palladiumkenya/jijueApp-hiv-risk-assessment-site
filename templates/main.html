@@ -27,7 +27,7 @@
               </p>
             </header>
 
-        <form action="" method="POST">
+        <form action="" method="POST" action="{% url 'result' %}">
             {% csrf_token %}
             <div class="form-group">
                 <label id="number-label" for="number"
@@ -499,8 +499,7 @@
 
                 <!--==SUBMIT==-->
                 <div class="form-group">
-                    <button type="submit" id="submit" class="submit-button">
-                      Submit
+                    <button action="{% url 'result' %}" type="submit" id="submit" class="submit-button">Submit
                     </button>
                   </div>
 

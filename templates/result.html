@@ -30,7 +30,7 @@
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="{% url 'sent' %}" class="nav__link">Referral</a></li>
+                        <li class="nav__item"><a href="{% url 'message' %}" class="nav__link">Referral</a></li>
                         <li class="nav__item"><a href="https://mydawa.com/products/flash-sale/sure-check-hiv-self-test-kit" class="nav__link">Order Test Kit</a></li>
                     </ul>
                 </div>
@@ -62,51 +62,59 @@
                     <br>
         
                 </div>
-                
+               
+                {% if result == 'LOW RISK' %}
                 <div class="contact__container bd-grid">
 
-                  <h4 style="color: hsl(224, 89%,60%);">WHAT DOES IT MEAN TO BE LOW RISK?</h4>
-                  <p> This means that you are less likely to have been exposed to HIV based on the risk assessment.</p>
-                  <p> To confirm your HIV status, you can get tested by:</p>
-                  <p>Booking an appointment to visit the nearest VCT centre or <br> order a self-test kit and test yourself at the comfort of your home.</p>
-                  <br>
-                  <p style="font-weight: 600;"> You can remain at low risk by;</p>
-                 
-                  <p> - Practicing safe sex by consistent and correct condom use.</p>
-                  <p> - Do not use an already used needle/syringe</p>
-                  <p> - Frequent screening for sexually transmitted infections .</p>
-                  <p> - Continually educate yourself on HIV transmission.</p>
-                  <br>
-                 <p>All these will reduce the chances of getting exposed to HIV.</p> <br>
-
-                  
-                 <h4 style="color: hsl(224, 89%,60%);"> WHAT DOES IT MEAN TO BE MEDIUM RISK?</h4>
-                  
-                 <p>This means that you are moderately likely to have been exposed to HIV. </p>
-                 <p>However, this does not mean that you will definitely turn out to be HIV positive once tested.</p>
-                 <p>To confirm your HIV status, you can get tested by:</p>
-                <p>Booking an appointment to visit the nearest VCT centre or <br> order a self-test kit and test yourself at the comfort of your home.</p>
-                 <p>If screening has not been done yet, and its within 72hours (3 days) of highly likely HIV exposure, PEP is advisable</p>
-                 <p>After screening, and you turn out to be negative, it’s advisable to start on PrEP.</p>
-                  <br>
-
-                  <h4 style="color: hsl(224, 89%,60%);">WHAT DOES IT MEAN TO BE HIGH RISK?</h4>
-
-                  <p>This means that you are highly likely to have been exposed to HIV.</p>
-                  <p>However, this does not mean that you will definitely turn out to be HIV positive once tested.</p>
-                  <p>To confirm your HIV status, you can get tested by:</p>
-                  <p>Booking an appointment to visit the nearest VCT centre or <br> order a self-test kit and test yourself at the comfort of your home.</p>
-                  <p>If screening has not been done yet, and its within 72hours(3 days) of highly likely HIV exposure, PEP is advisable </p>
-                  <p>If you turn out to be negative after screening, it’s advisable to start on PrEP.</p>
-                  <br>
-
-                  
-                  <h4 style="color: hsl(224, 89%,60%)">PREVENTION OF MOTHER-TO-CHILD TRANSMISSION</h4>
-                  <p>All women of reproductive age should be on contraceptive use to prevent unplanned pregnancies.</p>
-                  <p>You are advised to have frequent HIV and pregnancy self-test</p>
+                    <h4 style="color: hsl(224, 89%,60%);">WHAT DOES IT MEAN TO BE LOW RISK?</h4>
+                    <p> This means that you are less likely to have been exposed to HIV based on the risk assessment.</p>
+                    <p> To confirm your HIV status, you can get tested by:</p>
+                    <p>Booking an appointment to visit the nearest VCT centre or <br> order a self-test kit and test yourself at the comfort of your home.</p>
+                    <br>
+                    <p style="font-weight: 600;"> You can remain at low risk by;</p>
                    
-                
+                    <p> - Practicing safe sex by consistent and correct condom use.</p>
+                    <p> - Do not use an already used needle/syringe</p>
+                    <p> - Frequent screening for sexually transmitted infections .</p>
+                    <p> - Continually educate yourself on HIV transmission.</p>
+                    <br>
+                   <p>All these will reduce the chances of getting exposed to HIV.</p> <br>
                 </div>
+                {% endif %}
+
+                {% if result == 'MODERATE RISK' %}
+                <div class="contact__container bd-grid">
+                   <h4 style="color: hsl(224, 89%,60%);"> WHAT DOES IT MEAN TO BE MEDIUM RISK?</h4>
+                    
+                   <p>This means that you are moderately likely to have been exposed to HIV. </p>
+                   <p>However, this does not mean that you will definitely turn out to be HIV positive once tested.</p>
+                   <p>To confirm your HIV status, you can get tested by:</p>
+                  <p>Booking an appointment to visit the nearest VCT centre or <br> order a self-test kit and test yourself at the comfort of your home.</p>
+                   <p>If screening has not been done yet, and its within 72hours (3 days) of highly likely HIV exposure, PEP is advisable</p>
+                   <p>After screening, and you turn out to be negative, it’s advisable to start on PrEP.</p>
+                    <br>
+                </div>
+                {% endif %}
+                
+                {% if result == 'HIGH RISK' %}
+                <div class="contact__container bd-grid">
+                    <h4 style="color: hsl(224, 89%,60%);">WHAT DOES IT MEAN TO BE HIGH RISK?</h4>
+  
+                    <p>This means that you are highly likely to have been exposed to HIV.</p>
+                    <p>However, this does not mean that you will definitely turn out to be HIV positive once tested.</p>
+                    <p>To confirm your HIV status, you can get tested by:</p>
+                    <p>Booking an appointment to visit the nearest VCT centre or <br> order a self-test kit and test yourself at the comfort of your home.</p>
+                    <p>If screening has not been done yet, and its within 72hours(3 days) of highly likely HIV exposure, PEP is advisable </p>
+                    <p>If you turn out to be negative after screening, it’s advisable to start on PrEP.</p>
+                    <br>
+  
+                    
+                    <h4 style="color: hsl(224, 89%,60%)">PREVENTION OF MOTHER-TO-CHILD TRANSMISSION</h4>
+                    <p>All women of reproductive age should be on contraceptive use to prevent unplanned pregnancies.</p>
+                    <p>You are advised to have frequent HIV and pregnancy self-test</p>
+                  </div>
+                {% endif %}
+                
             </section>
             
 
@@ -125,11 +133,13 @@
                 {% endif %}
 
                 <div class="contact__container bd-grid">
-                    <form role="form" method="" class="contact__form" action="">
-                    
-                        <!-- <input type="text" id="name2" placeholder="Name" name="name" class="contact__input" required> -->
-                        
+                    <form role="form" method="POST" class="contact__form" action="">
+                        {% csrf_token %}
                         <input id="mail" name="mail" type="text" placeholder="you@mail.com" class="contact__input" required>
+
+                        <!-- {% if result %}
+                        <input id="mail" name="result" type="text" placeholder="you@mail.com" class="contact__input" required>{{result}}
+                        {% endif %} -->
   
                         <input  id="send" type="submit" value="Send Results" class="contact__button button">
     

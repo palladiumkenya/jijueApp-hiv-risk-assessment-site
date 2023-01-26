@@ -52,6 +52,7 @@ class sentResult(admin.ModelAdmin):
 
 admin.site.register(resultMail, sentResult)
 
+
 # appointment register
 admin.site.register(Appointment)
 

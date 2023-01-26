@@ -35,6 +35,7 @@ import datetime
 from django.template import Context
 from django.template.loader import render_to_string, get_template
 
+
 # App views here
 
 
@@ -88,16 +89,18 @@ def predictor(request):
         HIVPrEP = request.POST['HIVPrEP']
         y_pred = model.predict(
             [[age, gender, maritalStatus, coupleDiscordant, sw, pwid, testedBefore, presumedTB, treatmentTB]])
-        if y_pred <= 0.09:
-            y_pred = 'LOW'
+        if y_pred <= 0.009:
+            y_pred = 'LOW RISK'
 
-        elif y_pred > 0.1 or y_pred <= 0.2:
-            y_pred = 'MODERATE'
+        elif y_pred > 0.01 or y_pred <= 0.2:
+            y_pred = 'MODERATE RISK'
 
         elif y_pred > 0.21 or y_pred <= 0.6:
-            y_pred = 'HIGH'
+            y_pred = 'HIGH RISK'
         else:
-            y_pred = 'HIGH and SHOULD TEST NOW'
+            y_pred = 'HIGH RISK and SHOULD TEST NOW'
+
+        # y_pred = result_out
 
         PredictedResult.objects.create(age=age,
                                        gender=gender,
@@ -121,21 +124,6 @@ def predictor(request):
     return render(request, 'main.html')
 
 
-# class PredictorTemplateView(TemplateView):
-#     template_name = "result.html"
-
-#     def post(request):
-#         if request.method == 'POST':
-#             senders_email = request.POST.get('mail')
-
-#             #resultMail.objects.create(email=senders_email)
-
-#             messages.add_message(request, messages.SUCCESS,
-#                                  f"Your results has been sent successfully!")
-#             return HttpResponseRedirect(request.path)
-#         return render(request, 'result.html')
-
-
 def welcomePage(request):
     return render(request, 'base/welcome.html')
 
@@ -156,6 +144,32 @@ def statPage(request):
     return render(request, 'statistics.html')
 
 # Appointment views here.
+
+
+class ResultPage(TemplateView):
+    template_name = 'result.html'
+    # result = predictor(result_out)
+
+    def post(self, request):
+        senders_email = request.POST.get('mail')
+
+        message = f"Result message"
+
+        resultMail.objects.create(
+            email=senders_email, result=message)
+
+        email = EmailMessage(
+            subject=f"Result from Jijue risk assessment website",
+            body=message,
+            from_email=settings.EMAIL_HOST_USER,
+            to=[senders_email],
+            reply_to=[settings.EMAIL_HOST_USER]
+        )
+        email.send()
+
+        messages.add_message(request, messages.SUCCESS,
+                             f"Your results has been sent successfully!")
+        return HttpResponseRedirect(request.path)
 
 
 class HomeAppointment(TemplateView):

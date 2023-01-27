@@ -1,24 +1,6 @@
-import email
-from email import message
-from multiprocessing import context
-from django.db.models import Q
-from django.contrib.auth.models import User
-
-from django.shortcuts import render, redirect
-from django.contrib import messages
-
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
-
-from django.contrib.auth import authenticate, login, logout
-
-from django.http import HttpResponse
-
-# imports
+# Appointment imports
 from django.shortcuts import render
 
-
-# Appointment imports
 from django.http.response import HttpResponseRedirect
 from django.views.generic.base import TemplateView
 from django.core.mail import EmailMessage, message
@@ -36,7 +18,7 @@ from django.template.loader import render_to_string, get_template
 # Appointment views here.
 
 class HomeAppointment(TemplateView):
-    template_name = "appointmentApp/homeappointment.html"
+    template_name = "appointmentApp/main.html"
 
 
 class AppointmentTemplateView(TemplateView):

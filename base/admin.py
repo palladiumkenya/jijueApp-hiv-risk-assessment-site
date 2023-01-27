@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Appointment, PredictedResult, ReferralMessage, resultMail, ContactMessage
+from .models import PredictedResult, ReferralMessage, resultMail, ContactMessage
 
 # Register your models here.
 
@@ -51,10 +51,6 @@ class sentResult(admin.ModelAdmin):
 
 
 admin.site.register(resultMail, sentResult)
-
-
-# appointment register
-admin.site.register(Appointment)
 
 # Referral messages register
 

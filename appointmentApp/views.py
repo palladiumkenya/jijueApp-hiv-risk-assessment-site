@@ -66,7 +66,7 @@ class ManageAppointmentTemplateView(ListView):
             "date": date,
         }
 
-        message = get_template('email.html').render(data)
+        message = get_template('appointmentApp/email.html').render(data)
         email = EmailMessage(
             "About your appointment",
             message,

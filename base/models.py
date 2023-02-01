@@ -2,6 +2,10 @@ from twilio.rest import Client
 from django.db import models
 from django.http import request
 
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
 # Create your models here.
 
 
@@ -65,8 +69,8 @@ class ReferralMessage(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        account_sid = 'AC70ddd96f0b8b5d27828a2f9b8b34f125'
-        auth_token = 'fcd66ee758cbb2887f934dbaa4f96437'
+        account_sid = os.environ.get('account_sid')
+        auth_token = os.environ.get('auth_token')
         client = Client(account_sid, auth_token)
 
         message = client.messages.create(

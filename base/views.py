@@ -10,13 +10,13 @@ from joblib import load
 from .models import PredictedResult, ReferralMessage, resultMail, ContactMessage
 
 
-# Appointment imports
+# Mail imports
 from django.http.response import HttpResponseRedirect
 from django.views.generic.base import TemplateView
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.contrib import messages
-
+from django.template.loader import render_to_string, get_template
 
 # App views here
 
@@ -69,6 +69,9 @@ def predictor(request):
         sti = request.POST['sti']
         rapevictim = request.POST['rapevictim']
         HIVPrEP = request.POST['HIVPrEP']
+
+        global y_pred
+
         y_pred = model.predict(
             [[age, gender, maritalStatus, coupleDiscordant, sw, pwid, testedBefore, presumedTB, treatmentTB]])
         if y_pred <= 0.009:
@@ -84,23 +87,24 @@ def predictor(request):
 
         # y_pred = result_out
 
-        PredictedResult.objects.create(age=age,
-                                       gender=gender,
-                                       county=county,
-                                       maritalStatus=maritalStatus,
-                                       coupleDiscordant=coupleDiscordant,
-                                       SexWithWoman=SexWithWoman,
-                                       SexWithMan=SexWithMan,
-                                       condom_use=condom_use,
-                                       sw=sw,
-                                       pwid=pwid,
-                                       testedBefore=testedBefore,
-                                       presumedTB=presumedTB,
-                                       treatmentTB=treatmentTB,
-                                       sti=sti,
-                                       rapevictim=rapevictim,
-                                       HIVPrEP=HIVPrEP,
-                                       y_pred=y_pred)
+        predicted_results = PredictedResult.objects.create(age=age,
+                                                           gender=gender,
+                                                           county=county,
+                                                           maritalStatus=maritalStatus,
+                                                           coupleDiscordant=coupleDiscordant,
+                                                           SexWithWoman=SexWithWoman,
+                                                           SexWithMan=SexWithMan,
+                                                           condom_use=condom_use,
+                                                           sw=sw,
+                                                           pwid=pwid,
+                                                           testedBefore=testedBefore,
+                                                           presumedTB=presumedTB,
+                                                           treatmentTB=treatmentTB,
+                                                           sti=sti,
+                                                           rapevictim=rapevictim,
+                                                           HIVPrEP=HIVPrEP,
+                                                           y_pred=y_pred)
+        predicted_results.save()
 
         return render(request, 'result.html', {'result': y_pred})
     return render(request, 'main.html')
@@ -129,24 +133,59 @@ def statPage(request):
 
 
 class ResultPage(TemplateView):
+    model = PredictedResult
     template_name = 'result.html'
     # result = predictor(result_out)
+
+    # def post(self, request):
+    #     date = request.POST.get("date")
+    #     appointment_id = request.POST.get("appointment-id")
+    #     appointment = Appointment.objects.get(id=appointment_id)
+    #     appointment.accepted = True
+    #     appointment.accepted_date = datetime.datetime.now()
+    #     appointment.save()
+
+    #     data = {
+    #         "fname": appointment.first_name,
+    #         "date": date,
+    #     }
+
+    #     message = get_template('appointmentApp/email.html').render(data)
+    #     email = EmailMessage(
+    #         "About your appointment",
+    #         message,
+    #         settings.EMAIL_HOST_USER,
+    #         [appointment.email],
+    #     )
+    #     email.content_subtype = "html"
+    #     email.send()
+
+    #     messages.add_message(request, messages.SUCCESS,
+    #                          f"You accepted the appointment of {appointment.first_name}")
+    #     return HttpResponseRedirect(request.path)
 
     def post(self, request):
         senders_email = request.POST.get('mail')
 
-        message = f"Result message"
+        # predicted_result = PredictedResult.objects.get()
+        # predicted_result.save()
+
+        # result = y_pred
+        result = f"Result"
+
+        message = get_template('base/email.html')
 
         resultMail.objects.create(
-            email=senders_email, result=message)
+            email=senders_email, result=result)
 
         email = EmailMessage(
-            subject=f"Result from Jijue risk assessment website",
-            body=message,
-            from_email=settings.EMAIL_HOST_USER,
-            to=[senders_email],
-            reply_to=[settings.EMAIL_HOST_USER]
+            "Results of Your Requested HIV Risk Assessment",
+            message,
+            settings.EMAIL_HOST_USER,  # from
+            [senders_email],  # to
+            # [settings.EMAIL_HOST_USER]  # reply to
         )
+        email.content_subtype = "html"
         email.send()
 
         messages.add_message(request, messages.SUCCESS,

@@ -74,6 +74,7 @@ def predictor(request):
 
         y_pred = model.predict(
             [[age, gender, maritalStatus, coupleDiscordant, sw, pwid, testedBefore, presumedTB, treatmentTB]])
+
         if y_pred <= 0.009:
             y_pred = 'LOW RISK'
 
@@ -87,24 +88,23 @@ def predictor(request):
 
         # y_pred = result_out
 
-        predicted_results = PredictedResult.objects.create(age=age,
-                                                           gender=gender,
-                                                           county=county,
-                                                           maritalStatus=maritalStatus,
-                                                           coupleDiscordant=coupleDiscordant,
-                                                           SexWithWoman=SexWithWoman,
-                                                           SexWithMan=SexWithMan,
-                                                           condom_use=condom_use,
-                                                           sw=sw,
-                                                           pwid=pwid,
-                                                           testedBefore=testedBefore,
-                                                           presumedTB=presumedTB,
-                                                           treatmentTB=treatmentTB,
-                                                           sti=sti,
-                                                           rapevictim=rapevictim,
-                                                           HIVPrEP=HIVPrEP,
-                                                           y_pred=y_pred)
-        predicted_results.save()
+        PredictedResult.objects.create(age=age,
+                                       gender=gender,
+                                       county=county,
+                                       maritalStatus=maritalStatus,
+                                       coupleDiscordant=coupleDiscordant,
+                                       SexWithWoman=SexWithWoman,
+                                       SexWithMan=SexWithMan,
+                                       condom_use=condom_use,
+                                       sw=sw,
+                                       pwid=pwid,
+                                       testedBefore=testedBefore,
+                                       presumedTB=presumedTB,
+                                       treatmentTB=treatmentTB,
+                                       sti=sti,
+                                       rapevictim=rapevictim,
+                                       HIVPrEP=HIVPrEP,
+                                       y_pred=y_pred)
 
         return render(request, 'result.html', {'result': y_pred})
     return render(request, 'main.html')

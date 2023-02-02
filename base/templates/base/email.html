@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{% static 'styles/email.css' %}">
     
 
-    <title>Thanks for making an appointment </title>
+    <title>Risk assessment results</title>
 
 
 </head>
@@ -33,20 +33,15 @@
                         <td align="center" style="color: #343434; font-size: 24px; font-family: Quicksand, Calibri, sans-serif; font-weight:700;letter-spacing: 3px; line-height: 35px;"
                             class="main-header">
                             <!-- section text ======-->
-
                             <div style="line-height: 35px">
-
-                                Appointment Confirmation.</span>
-
+                                Risk assessment results
                             </div>
                         </td>
                     </tr>
-
                     <tr>
                         <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
                     </tr>
-
-                    <tr>
+                    <!-- <tr>
                         <td align="center">
                             <table border="0" width="40" align="center" cellpadding="0" cellspacing="0" bgcolor="eeeeee">
                                 <tr>
@@ -58,7 +53,7 @@
 
                     <tr>
                         <td height="20" style="font-size: 20px; line-height: 20px;">&nbsp;</td>
-                    </tr>
+                    </tr> -->
 
                     <tr>
                         <td align="left">
@@ -68,14 +63,11 @@
                                         <!-- section text ======-->
 
                                         <p style="line-height: 24px; margin-bottom:15px;">
-
-                                            Hello {{fname}},
-
+                                            Hello,
                                         </p>
                                         <p style="line-height: 24px;margin-bottom:15px;">
-                                            Your appointment with Dr. Sarah  has been confirmed. 
-
-                                            To cancel or reschedule this appointment, reply to this message or contact us using the contact form . For general inquiries, text this number +254 712 345 678 or visit our official website https://www.jijue.com for further information.
+                                            Your appointment with Dr. Sarah  has been confirmed.
+                                            To cancel or reschedule this appointment, reply to this message or contact us using the contact form . For general inquiries, reach out to us via +254 712 345 678 or visit our official website https://www.jijue.com for further information.
                                         <br>
                                         <br>
                                         The date of the appointmeent is set to {{date}}.
@@ -92,8 +84,9 @@
 
                                         </table>
                                         <p style="line-height: 24px">
-                                            Love,</br>
-                                            Caring doctor
+                                            Love,
+                                            </br>
+                                            Caring doctor.
                                         </p>
 
                                     </td>

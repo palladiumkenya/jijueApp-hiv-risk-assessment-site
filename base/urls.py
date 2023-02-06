@@ -18,9 +18,9 @@ urlpatterns = [
 
     path('predictor/', views.predictor, name='predictor'),
 
-    # path('predictor/result/', ResultPage.as_view(), name='result'),
+    path('predictor/result/', ResultPage.as_view(), name='result'),
 
-    path('predictor/result/', views.getResult, name='get-result'),
+    # path('predictor/result/', views.getResult, name='get-result'),
 
     path('message/', MessageView.as_view(), name='message'),
 ]

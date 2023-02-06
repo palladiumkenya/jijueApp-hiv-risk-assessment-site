@@ -129,6 +129,9 @@ def nutritionPage(request):
 def statPage(request):
     return render(request, 'statistics.html')
 
+
+def getResult(request):
+    return render(request, 'base/result.html')
 # Result views here.
 
 

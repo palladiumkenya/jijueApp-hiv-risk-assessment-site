@@ -4,8 +4,8 @@ from django.http import HttpResponse
 
 # imports
 from django.shortcuts import render
-from sklearn.tree import DecisionTreeClassifier
-from xgboost import XGBRegressor
+# from sklearn.tree import DecisionTreeClassifier
+# from xgboost import XGBRegressor
 from joblib import load
 from .models import PredictedResult, ReferralMessage, resultMail, ContactMessage
 

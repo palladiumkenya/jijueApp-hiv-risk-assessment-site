@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED=1
 # 		postgresql-client \
 # 	&& rm -rf /var/lib/apt/lists/*
 # WORKDIR /app
-WORKDIR /usr/src/app
+WORKDIR /jijueapp
 
 COPY requirements.txt ./
 

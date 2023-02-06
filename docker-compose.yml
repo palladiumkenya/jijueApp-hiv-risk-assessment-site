@@ -11,12 +11,5 @@ services:
     container_name: django_container
     env_file:
         - ./.env
-    # environment:
-    #   - SECRET_KEY = 'django-insecure-gl4urfb)f(w=sikb-rhxfwbzly4&jyp$%d=ao=22@d6(*qj567'
-    #   - DEBUG=True
-    #   - EMAIL_HOST_USER=jijueapp@gmail.com
-    #   - EMAIL_HOST_PASSWORD=vacbgjanbpqcuiyq
-    #   - account_sid =AC70ddd96f0b8b5d27828a2f9b8b34f125
-    #   - auth_token =fcd66ee758cbb2887f934dbaa4f96437
-
+  
     command: python3 manage.py runserver 0.0.0.0:8000

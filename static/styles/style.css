@@ -756,3 +756,16 @@ img {
   opacity: 0.5;
 }
 
+.button-result {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: .75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: .5rem;
+  transition: .3s;
+}
+
+.button-result:hover {
+  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+}

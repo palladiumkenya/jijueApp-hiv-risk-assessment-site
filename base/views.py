@@ -129,15 +129,12 @@ def nutritionPage(request):
 def statPage(request):
     return render(request, 'statistics.html')
 
-
-def getResult(request):
-    return render(request, 'base/result.html')
 # Result views here.
 
 
 class ResultPage(TemplateView):
     model = PredictedResult
-    template_name = 'result.html'
+    template_name = 'base/result.html'
     # result = predictor(result_out)
 
     # def post(self, request):

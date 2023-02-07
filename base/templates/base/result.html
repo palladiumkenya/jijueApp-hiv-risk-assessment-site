@@ -7,15 +7,11 @@
 
         <link rel="stylesheet" href="{% static 'styles/style.css' %}">
         <link href="{% static 'js/main.js' %}">
-        
-
-
-
 
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-        <title>Result</title>
+        <title>Get result</title>
 
     </head>
     <body>
@@ -82,10 +78,6 @@
                     <form role="form" method="POST" class="contact__form" action="">
                         {% csrf_token %}
                         <input id="mail" name="mail" type="text" placeholder="you@mail.com" class="contact__input" required>
-
-                        <!-- {% if result %}
-                        <input id="mail" name="result" type="text" placeholder="you@mail.com" class="contact__input" required>{{result}}
-                        {% endif %} -->
   
                         <input  id="send" type="submit" value="Send Results" class="contact__button button">
     

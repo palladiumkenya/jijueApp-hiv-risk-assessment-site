@@ -150,7 +150,7 @@ class ResultPage(TemplateView):
         name = request.POST.get('name')
         senders_email = request.POST.get('mail')
         # userresult_id = request.POST.get("userresult-id")
-        userresult = PredictedResult.objects.get(user_id=2)
+        userresult = PredictedResult.objects.get(user_id=3)
         userresult.save()
 
         # newdata = {

@@ -45,7 +45,8 @@ admin.site.register(ContactMessage, contactForm)
 
 
 class sentResult(admin.ModelAdmin):
-    list_display = ('email',
+    list_display = ('name',
+                    'email',
                     'result',
                     'sent_date')
 

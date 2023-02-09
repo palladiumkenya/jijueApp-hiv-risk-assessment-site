@@ -49,6 +49,7 @@ def __str__(self):
 
 
 class resultMail(models.Model):
+    name = models.CharField(max_length=256)
     email = models.CharField(max_length=256)
     result = models.CharField(max_length=256)
     sent_date = models.DateTimeField(auto_now_add=True)

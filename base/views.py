@@ -72,8 +72,6 @@ def predictor(request):
         rapevictim = request.POST['rapevictim']
         HIVPrEP = request.POST['HIVPrEP']
 
-        global y_pred
-
         y_pred = model.predict(
             [[age, gender, maritalStatus, coupleDiscordant, sw, pwid, testedBefore, presumedTB, treatmentTB]])
 
@@ -90,25 +88,25 @@ def predictor(request):
 
         # y_pred = result_out
 
-        user_result = PredictedResult.objects.create(age=age,
-                                                     gender=gender,
-                                                     county=county,
-                                                     maritalStatus=maritalStatus,
-                                                     coupleDiscordant=coupleDiscordant,
-                                                     SexWithWoman=SexWithWoman,
-                                                     SexWithMan=SexWithMan,
-                                                     condom_use=condom_use,
-                                                     sw=sw,
-                                                     pwid=pwid,
-                                                     testedBefore=testedBefore,
-                                                     presumedTB=presumedTB,
-                                                     treatmentTB=treatmentTB,
-                                                     sti=sti,
-                                                     rapevictim=rapevictim,
-                                                     HIVPrEP=HIVPrEP,
-                                                     y_pred=y_pred)
+        userresult = PredictedResult.objects.create(age=age,
+                                                    gender=gender,
+                                                    county=county,
+                                                    maritalStatus=maritalStatus,
+                                                    coupleDiscordant=coupleDiscordant,
+                                                    SexWithWoman=SexWithWoman,
+                                                    SexWithMan=SexWithMan,
+                                                    condom_use=condom_use,
+                                                    sw=sw,
+                                                    pwid=pwid,
+                                                    testedBefore=testedBefore,
+                                                    presumedTB=presumedTB,
+                                                    treatmentTB=treatmentTB,
+                                                    sti=sti,
+                                                    rapevictim=rapevictim,
+                                                    HIVPrEP=HIVPrEP,
+                                                    y_pred=y_pred)
 
-        user_result.save()
+        userresult.save()
 
         return render(request, 'result.html', {'result': y_pred})
     return render(request, 'main.html')
@@ -171,12 +169,20 @@ class ResultPage(TemplateView):
     def post(self, request):
         name = request.POST.get('name')
         senders_email = request.POST.get('mail')
+        # userresult_id = request.POST.get("userresult-id")
+        # userresult = PredictedResult.objects.get(id=userresult_id)
+        # userresult.save()
+
+        # newdata = {
+        #     'name': name,
+        #     'result': userresult.y_pred
+        # }
 
         # predicted_result = PredictedResult.objects.get()
         # predicted_result.save()
 
         # result = y_pred
-        result = f"Low"
+        result = "Low"
 
         data = {"name": name,
                 "result": result}

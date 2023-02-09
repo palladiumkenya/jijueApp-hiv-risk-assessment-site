@@ -10,6 +10,7 @@ load_dotenv()
 
 
 class PredictedResult(models.Model):
+    user_id = models.AutoField(primary_key=True)
     age = models.PositiveBigIntegerField()
     gender = models.PositiveBigIntegerField()
     county = models.CharField(max_length=100)

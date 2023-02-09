@@ -7,7 +7,8 @@ from .models import PredictedResult, ReferralMessage, resultMail, ContactMessage
 
 
 class DataAdmin(admin.ModelAdmin):
-    list_display = ('age',
+    list_display = ('user_id',
+                    'age',
                     'gender',
                     'county',
                     'maritalStatus',

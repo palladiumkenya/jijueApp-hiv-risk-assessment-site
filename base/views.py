@@ -18,7 +18,6 @@ from django.conf import settings
 from django.contrib import messages
 from django.template.loader import render_to_string, get_template
 
-from django.template.loader import render_to_string
 
 # App views here
 

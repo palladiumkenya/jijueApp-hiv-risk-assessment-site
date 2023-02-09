@@ -190,7 +190,7 @@ class ResultPage(TemplateView):
         email.send()
 
         messages.add_message(request, messages.SUCCESS,
-                             f"Your results has been sent successfully!")
+                             f"Your results has been sent to your email successfully!")
         return HttpResponseRedirect(request.path)
 
 

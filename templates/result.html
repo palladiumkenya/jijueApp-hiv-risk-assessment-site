@@ -125,8 +125,20 @@
             <section class="contact section" id="contact">
                 <h2  class="section-title">Get results</h2>
                 <h4 style="text-align: center;" >Would you like an email copy of your results? </h4>
+
+                <div class="contact__container bd-grid">
+                    
+                    <p style="font-weight: 600;"> <button class="welcomeBtn">Continue</button></p>
+                    
+
+                    <br>
+                    <br>
+
+                    <p> By clicking the button, you consent to giving us your email address.</p>
+        
+                </div>
                 
-                {% if messages %}
+                <!-- {% if messages %}
                 <div class="contact__container bd-grid">
                     <div class="contact__container bd-grid">
                     {% for message in messages %}
@@ -134,22 +146,20 @@
                     {% endfor %}
                     </div>
                 </div> 
-                {% endif %}
+                {% endif %} -->
 
-                <div class="contact__container bd-grid">
+                <!-- <div class="contact__container bd-grid">
                     <form role="form" method="POST" class="contact__form" action="">
                         {% csrf_token %}
                         <input id="mail" name="mail" type="text" placeholder="you@mail.com" class="contact__input" required>
 
-                        <!-- {% if result %}
-                        <input id="mail" name="result" type="text" placeholder="you@mail.com" class="contact__input" required>{{result}}
-                        {% endif %} -->
+                        
   
                         <input  id="send" type="submit" value="Send Results" class="contact__button button">
     
                     </form> 
                 </div> 
-        
+         -->
         </section>
 
           </main>

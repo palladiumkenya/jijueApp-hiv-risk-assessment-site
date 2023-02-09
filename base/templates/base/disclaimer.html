@@ -39,7 +39,7 @@
  <section class="privacy section" id="privacy">
     <div class="privacy">
         <h2 class="section-title">Privacy</h2>
-        <p style="border: 20px;text-align: center;">
+        <p style="border: 20px;text-align: center; padding: 30px;">
             At Jijue, accessible from jijue.com, one of our main priorities is the privacy of our visitors.
             This Privacy Policy document contains types of information that is collected and recorded by Jijue and how we use it.
             If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us
@@ -72,17 +72,20 @@
 
         </p>
         <h2 class="section-title">Disclaimer</h2>
-        <p style="text-align: center;">
+        <p style="text-align: center; padding: 30px;">
             The Machine-Learning model in the Jijue platform has been designed using credible data. Different
             variables have been used in the model to compute the risk of an individual turning HIV positive. However the   
             risk score calculated by our website is not final hence it does not reflect your actual HIV status. One can    
             only ascertain his/her HIV status by getting tested from a VCT Centre or by using a self-test kit.
         </p>
 
-        <div class="btn-container">
-            <div><button class="Btn-1"> <a href="/">Decline</a></button></div>
-            
-            <div><button class="Btn-2"><a href="{% url 'predictor' %}">accept</a></button></div>
+        <div class="contact__container bd-grid" style="display: flex; justify-content: space-around;padding: 10px; flex-direction: row; flex-wrap: wrap;">
+            <div  style="padding: .5rem; margin-top: 30px; margin-bottom: 30px; text-decoration: none;" > <a href="/" class="welcomeBtn" style="padding: 20px;">Decline</a></div>
+            <div  style="padding: .5rem; margin-top: 30px; margin-bottom: 30px; text-decoration: none;" > <a href="{% url 'predictor' %}" class="welcomeBtn" style="padding: 20px;">Accept</a></div>
+        </div>
+
+        <div>
+            <p style="text-align: center; color: red; margin-top: 20px;">By clicking 'Accept', you agree to continue with risk assessment.</p>
         </div>
             
     </div>

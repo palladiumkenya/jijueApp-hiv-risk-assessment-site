@@ -134,7 +134,7 @@ def statPage(request):
 
 class ResultPage(TemplateView):
     model = PredictedResult
-    template_name = 'base/result.html'
+    template_name = 'base/getresult.html'
     # result = predictor(result_out)
 
     # def post(self, request):

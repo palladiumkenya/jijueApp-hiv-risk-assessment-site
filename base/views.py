@@ -90,23 +90,25 @@ def predictor(request):
 
         # y_pred = result_out
 
-        PredictedResult.objects.create(age=age,
-                                       gender=gender,
-                                       county=county,
-                                       maritalStatus=maritalStatus,
-                                       coupleDiscordant=coupleDiscordant,
-                                       SexWithWoman=SexWithWoman,
-                                       SexWithMan=SexWithMan,
-                                       condom_use=condom_use,
-                                       sw=sw,
-                                       pwid=pwid,
-                                       testedBefore=testedBefore,
-                                       presumedTB=presumedTB,
-                                       treatmentTB=treatmentTB,
-                                       sti=sti,
-                                       rapevictim=rapevictim,
-                                       HIVPrEP=HIVPrEP,
-                                       y_pred=y_pred)
+        user_result = PredictedResult.objects.create(age=age,
+                                                     gender=gender,
+                                                     county=county,
+                                                     maritalStatus=maritalStatus,
+                                                     coupleDiscordant=coupleDiscordant,
+                                                     SexWithWoman=SexWithWoman,
+                                                     SexWithMan=SexWithMan,
+                                                     condom_use=condom_use,
+                                                     sw=sw,
+                                                     pwid=pwid,
+                                                     testedBefore=testedBefore,
+                                                     presumedTB=presumedTB,
+                                                     treatmentTB=treatmentTB,
+                                                     sti=sti,
+                                                     rapevictim=rapevictim,
+                                                     HIVPrEP=HIVPrEP,
+                                                     y_pred=y_pred)
+
+        user_result.save()
 
         return render(request, 'result.html', {'result': y_pred})
     return render(request, 'main.html')

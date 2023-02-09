@@ -165,6 +165,7 @@ class ResultPage(TemplateView):
     #     return HttpResponseRedirect(request.path)
 
     def post(self, request):
+        name = request.POST.get('name')
         senders_email = request.POST.get('mail')
 
         # predicted_result = PredictedResult.objects.get()
@@ -173,14 +174,14 @@ class ResultPage(TemplateView):
         # result = y_pred
         result = f"Result"
 
-        message = get_template('base/email.html')
+        # message = get_template('base/email.html')
 
         resultMail.objects.create(
             email=senders_email, result=result)
 
         email = EmailMessage(
             "Results of Your Requested HIV Risk Assessment",
-            message,
+            f"Hello",
             settings.EMAIL_HOST_USER,  # from
             [senders_email],  # to
             # [settings.EMAIL_HOST_USER]  # reply to

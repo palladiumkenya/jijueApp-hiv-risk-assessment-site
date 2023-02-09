@@ -11,5 +11,5 @@ services:
     container_name: django_container
     env_file:
         - ./.env
-  
+        
     command: python3 manage.py runserver 0.0.0.0:8000

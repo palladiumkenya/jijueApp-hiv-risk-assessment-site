@@ -174,9 +174,9 @@ class ResultPage(TemplateView):
         # predicted_result.save()
 
         # result = y_pred
-        result = f"Result"
+        result = f"Low"
 
-        data = {"fname": name,
+        data = {"name": name,
                 "result": result}
 
         message = get_template('base/email.html').render(data)

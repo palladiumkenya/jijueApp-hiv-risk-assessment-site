@@ -174,23 +174,23 @@ class ResultPage(TemplateView):
         # result = y_pred
         result = f"Result"
 
-        # message = get_template('base/email.html')
+        message = get_template('base/email.html')
 
-        resultMail.objects.create(
-            email=senders_email, result=result)
+        resultMail.objects.create(name=name,
+                                  email=senders_email, result=result)
 
         email = EmailMessage(
             "Results of Your Requested HIV Risk Assessment",
-            f"Hello",
+            message,
             settings.EMAIL_HOST_USER,  # from
             [senders_email],  # to
-            # [settings.EMAIL_HOST_USER]  # reply to
+            [settings.EMAIL_HOST_USER]  # reply to
         )
         email.content_subtype = "html"
         email.send()
 
         messages.add_message(request, messages.SUCCESS,
-                             f"Your results has been sent to your email successfully!")
+                             f"Dear {name}, your results has been sent to your email successfully!")
         return HttpResponseRedirect(request.path)
 
 

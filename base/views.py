@@ -147,30 +147,11 @@ class ResultPage(TemplateView):
     #     appointment.accepted_date = datetime.datetime.now()
     #     appointment.save()
 
-    #     data = {
-    #         "fname": appointment.first_name,
-    #         "date": date,
-    #     }
-
-    #     message = get_template('appointmentApp/email.html').render(data)
-    #     email = EmailMessage(
-    #         "About your appointment",
-    #         message,
-    #         settings.EMAIL_HOST_USER,
-    #         [appointment.email],
-    #     )
-    #     email.content_subtype = "html"
-    #     email.send()
-
-    #     messages.add_message(request, messages.SUCCESS,
-    #                          f"You accepted the appointment of {appointment.first_name}")
-    #     return HttpResponseRedirect(request.path)
-
     def post(self, request):
         name = request.POST.get('name')
         senders_email = request.POST.get('mail')
         # userresult_id = request.POST.get("userresult-id")
-        userresult = PredictedResult.objects.get(user_id=1)
+        userresult = PredictedResult.objects.get(user_id=2)
         userresult.save()
 
         # newdata = {

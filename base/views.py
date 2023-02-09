@@ -18,6 +18,8 @@ from django.conf import settings
 from django.contrib import messages
 from django.template.loader import render_to_string, get_template
 
+from django.template.loader import render_to_string
+
 # App views here
 
 
@@ -174,7 +176,10 @@ class ResultPage(TemplateView):
         # result = y_pred
         result = f"Result"
 
-        message = get_template('base/email.html')
+        data = {"fname": name,
+                "result": result}
+
+        message = get_template('base/email.html').render(data)
 
         resultMail.objects.create(name=name,
                                   email=senders_email, result=result)

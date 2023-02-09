@@ -48,7 +48,7 @@
             </section>
 
             <!--===== RISK REPORT =====-->
-            <section class="contact section" id="contact">
+            <!-- <section class="contact section" id="contact">
                 <h2 class="section-title" style="font-size: 24px;">Risk Report</h2>
                     
                 <div class="contact__container bd-grid">
@@ -59,7 +59,7 @@
                     <br>
         
                 </div>
-            </section>
+            </section> -->
             <section class="contact section" id="contact">
                 <h2  class="section-title">Get results</h2>
                 <h4 style="text-align: center;" >Would you like an email copy of your results? </h4>
@@ -77,6 +77,8 @@
                 <div class="contact__container bd-grid">
                     <form role="form" method="POST" class="contact__form" action="">
                         {% csrf_token %}
+                        <input id="name" name="name" type="text" placeholder="Name" class="contact__input" required>
+
                         <input id="mail" name="mail" type="text" placeholder="you@mail.com" class="contact__input" required>
   
                         <input  id="send" type="submit" value="Send Results" class="contact__button button">

@@ -108,7 +108,7 @@ def predictor(request):
         userresult.save()
 
         return render(request, 'result.html', {'result': y_pred})
-    return render(request, 'main.html')
+    return render(request, 'form.html')
 
 
 def welcomePage(request):

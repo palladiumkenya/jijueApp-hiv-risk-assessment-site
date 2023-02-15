@@ -12,4 +12,4 @@
 ### 2. Using Docker
 
 1.  Run `docker-compose up --build` to create docker image and container
-2.  Navigate to [http://127.0.0.1:8000](localhost:8000) to test
+2.  Navigate to [localhost:8000](localhost:8000) to test

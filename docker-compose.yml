@@ -8,7 +8,7 @@ services:
       - ./:/jijueapp
     image: app:jijueapp
 
-    container_name: django_container
+    container_name: jijueapp_container
     # env_file:
     #     - ./.env
     environment:

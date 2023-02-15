@@ -54,13 +54,23 @@
             <!--===== RISK REPORT =====-->
             <section class="contact section" id="contact">
                 <h2 class="section-title" style="font-size: 24px;">Risk Report</h2>
-                    
+                
+                
                 <div class="contact__container bd-grid">
                     {% if result %}
-                    <p style="font-weight: 600;"> <button class="welcomeBtn">{{result}}</button></p>
-                    {% endif %}
+                        {% if result == 'LOW RISK' %}
+                    <p style="font-weight: 600;"> <button class="welcomeBtn" style="color: rgb(14, 161, 14);">{{result}}</button></p>
+                        {% endif %}
 
-                    <br>
+                        {% if result == 'MODERATE' %}
+                    <p style="font-weight: 600;"> <button class="welcomeBtn" style="color: orange;">{{result}}</button></p>
+                        {% endif %}
+
+                        {% if result == 'HIGH RISK' %}
+                    <p style="font-weight: 600;"> <button class="welcomeBtn" style="color: red;">{{result}}</button></p>
+                        {% endif %}
+
+                    {% endif %}
         
                 </div>
 

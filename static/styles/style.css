@@ -274,7 +274,7 @@ img {
   border-radius: .5rem;
 }
 
-/* ===== SKILLS =====*/
+/* ===== FAQs =====*/
 .skills__container {
   row-gap: 2rem;
   text-align: center;
@@ -335,6 +335,7 @@ img {
   text-align: center;
   font-weight: var(--font-semi);
   padding: 2rem 0;
+  margin-bottom: 0px;
 }
 
 .footer__title {

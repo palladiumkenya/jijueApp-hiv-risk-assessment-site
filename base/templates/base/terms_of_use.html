@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Risk Assessment website</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Jijue</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+
+ <!--===== PRIVACY SECTION =====-->
+ <section class="privacy section" id="privacy">
+    <div class="privacy">
+        <h2 class="section-title">Privacy</h2>
+        <p style="border: 20px;text-align: center; padding: 30px;">
+            At Jijue, accessible from jijue.com, one of our main priorities is the privacy of our visitors.
+            This Privacy Policy document contains types of information that is collected and recorded by Jijue and how we use it.
+            If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us
+            <br>
+            <br>
+            Jijue follows a standard procedure of using log files. These files log visitors when they visit websites.
+            All hosting companies do this and a part of hosting services' analytics.
+            The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. 
+            These are not linked to any information that is personally identifiable. 
+            The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
+            <br>
+            <br>
+            Like any other website, Jijue uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. 
+            The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.
+            <br>
+            <br>
+            Jijue's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. 
+            It may include their practices and instructions about how to opt-out of certain options.
+            You can choose to disable cookies through your individual browser options. 
+            To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites
+            <br>
+            <br>
+            This Privacy Policy applies only to our online activities and is valid for visitors to our website with 
+            regards to the information that they shared and/or collect in Jijue. 
+            This policy is not applicable to any information collected offline or via channels other than this website.
+            <br>
+            <br>
+            By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.
+
+
+        </p>
+        <h2 class="section-title">Disclaimer</h2>
+        <p style="text-align: center; padding: 30px;">
+            The Machine-Learning model in the Jijue platform has been designed using credible data. Different
+            variables have been used in the model to compute the risk of an individual turning HIV positive. However the   
+            risk score calculated by our website is not final hence it does not reflect your actual HIV status. One can    
+            only ascertain his/her HIV status by getting tested from a VCT Centre or by using a self-test kit.
+        </p>
+            
+    </div>
+</section>
+           
+        </main>
+    </body>
+        <!--===== FOOTER =====-->
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="{% static 'js/main.js' %}"></script>
+    
+</html>

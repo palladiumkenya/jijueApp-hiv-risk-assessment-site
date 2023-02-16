@@ -36,7 +36,7 @@
         <main class="l-main">
 
             <!--===== SECTION =====-->
-            <section class="contact section" id="contact">
+            <section class="contact section">
                 <h2 class="section-title">WELCOME TO JIJUE</h2>
 
                 <div class="contact__container bd-grid">
@@ -75,21 +75,25 @@
 <!--===== MAIN JS =====-->
 <script src="{% static 'js/main.js' %}"></script>
 
-        <!--===== FOOTER =====-->
-        <footer class="footer">
-            <p class="footer__title">Jijue</p>
-            <div class="footer__social">
-                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
-            </div>
-            
-            <p>
-                        
-            Copyright
-                <script>
-                    document.write(new Date().getFullYear());
-                </script> &#169; Jijue | All rigths reserved | Privacy & Policy</p>
-        </footer>
+         <!--===== FOOTER =====-->
+<footer class="footer">
+    <p class="footer__title">Jijue</p>
+    <div class="footer__social">
+        <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+        <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+        <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+    </div>
+    
+    <p>      
+        Copyright
+            <script>
+                document.write(new Date().getFullYear());
+            </script> &#169; Jijue | All rigths reserved
+            <p> 
+                <a href="{% url 'privacy' %}" class="footer__link" style="color: blue; text-decoration: underline;">Privacy & Policy</a> | 
+                <a href="{% url 'terms' %}" class="footer__link" style="color: blue; text-decoration: underline;">Terms of Use</a>
+            </p>
+    </p>
+</footer>
     
 </html>

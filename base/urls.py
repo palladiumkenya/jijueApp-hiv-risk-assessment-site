@@ -1,12 +1,16 @@
 from django.urls import path
 from . import views
-from .views import Home, MessageView, statPage, ResultPage
+from .views import Home, MessageView, ResultPage
 
 
 urlpatterns = [
     path('', Home.as_view(), name='main'),
 
-    path('stat-page/', statPage, name='stat-page'),
+    path('stat-page/', views.statPage, name='stat-page'),
+
+    path('terms/', views.terms_of_use, name='terms'),
+
+    path('privacy/', views.privacy_policy, name='privacy'),
 
     path('vct/', views.vctPage, name='vct-page'),
 

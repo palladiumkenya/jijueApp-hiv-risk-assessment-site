@@ -35,49 +35,60 @@
 
         <main class="l-main">
 
- <!--===== PRIVACY SECTION =====-->
- <section class="privacy section" id="privacy">
-    <div class="privacy">
-        <h2 class="section-title">Privacy</h2>
-        <p style="border: 20px;text-align: center; padding: 30px;">
+ <!--===== SECTION =====-->
+ <section class="contact section">
+    <h2 class="section-title">Privacy Policy</h2>
+
+    <div class="contact__container bd-grid">
+        
+        <p>
             At Jijue, accessible from jijue.com, one of our main priorities is the privacy of our visitors.
             This Privacy Policy document contains types of information that is collected and recorded by Jijue and how we use it.
             If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us
-            <br>
-            <br>
-            Jijue follows a standard procedure of using log files. These files log visitors when they visit websites.
-            All hosting companies do this and a part of hosting services' analytics.
-            The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. 
-            These are not linked to any information that is personally identifiable. 
-            The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
-            <br>
-            <br>
-            Like any other website, Jijue uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. 
-            The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.
-            <br>
-            <br>
-            Jijue's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. 
-            It may include their practices and instructions about how to opt-out of certain options.
-            You can choose to disable cookies through your individual browser options. 
-            To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites
-            <br>
-            <br>
-            This Privacy Policy applies only to our online activities and is valid for visitors to our website with 
-            regards to the information that they shared and/or collect in Jijue. 
-            This policy is not applicable to any information collected offline or via channels other than this website.
-            <br>
-            <br>
-            By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.
+        <br>
+        <br>
+
+        Jijue follows a standard procedure of using log files. These files log visitors when they visit websites.
+        All hosting companies do this and a part of hosting services' analytics.
+        The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. 
+        These are not linked to any information that is personally identifiable. 
+        The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.                            
+
+        
+
+        <br>
+        <br>
+
+        These Privacy Policy applies only to our online activities and is valid for visitors to our website with 
+        regards to the information that they shared and/or collect in Jijue. 
+        This policy is not applicable to any information collected offline or via channels other than this website.
+        <br>
+        <br>
+        Read more about our <a href="{% url 'privacy' %}" style="color: blue;">privacy policy</a> and <a href="{% url 'terms' %}" style="color: blue;">terms of use</a>.
+
+        
+        </P>
+        
+    </div>
+</section>
 
 
-        </p>
+ <!--===== PDisclaimer SECTION =====-->
+ <section class="privacy section" style="margin-top: -80px;">
+    <div class="contact__container bd-grid">
         <h2 class="section-title">Disclaimer</h2>
-        <p style="text-align: center; padding: 30px;">
+        <p style="text-align: center; padding: 0px;">
             The Machine-Learning model in the Jijue platform has been designed using credible data. Different
             variables have been used in the model to compute the risk of an individual turning HIV positive. However the   
             risk score calculated by our website is not final hence it does not reflect your actual HIV status. One can    
             only ascertain his/her HIV status by getting tested from a VCT Centre or by using a self-test kit.
         </p>
+        <p style="text-align: center; padding: 10px;">
+             Would you like to continue with HIV Risk Assessment?
+        </p>
+    </div>
+
+    <div class="privacy">
 
         <div class="contact__container bd-grid" style="display: flex; justify-content: space-around;padding: 10px; flex-direction: row; flex-wrap: wrap;">
             <div  style="padding: .5rem; margin-top: 30px; margin-bottom: 30px; text-decoration: none;" > <a href="/" class="welcomeBtn" style="padding: 20px;">Decline</a></div>
@@ -85,7 +96,8 @@
         </div>
 
         <div>
-            <p style="text-align: center; color: red; margin-top: 20px;">By clicking 'Accept', you agree to continue with risk assessment.</p>
+            
+            <p style="text-align: center; color: red; margin-top: 20px;"><input type="checkbox">By clicking 'Accept', you agree to continue with risk assessment.</p>
         </div>
             
     </div>
@@ -93,22 +105,29 @@
            
         </main>
     </body>
+
+
+ <!--===== FOOTER =====-->
+<footer class="footer">
+    <p class="footer__title">Jijue</p>
+    <div class="footer__social">
+        <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+        <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+        <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+    </div>
+    
+    <p>      
+        Copyright
+            <script>
+                document.write(new Date().getFullYear());
+            </script> &#169; Jijue | All rigths reserved
+            <p> 
+                <a href="{% url 'privacy' %}" class="footer__link" style="color: blue; text-decoration: underline;">Privacy & Policy</a> | 
+                <a href="{% url 'terms' %}" class="footer__link" style="color: blue; text-decoration: underline;">Terms of Use</a>
+            </p>
+    </p>
+</footer>
         <!--===== FOOTER =====-->
-        <footer class="footer">
-            <p class="footer__title">Jijue</p>
-            <div class="footer__social">
-                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
-            </div>
-            
-            <p>
-                        
-            Copyright
-                <script>
-                    document.write(new Date().getFullYear());
-                </script> &#169; Jijue | All rigths reserved | Privacy & Policy</p>
-        </footer>
 
 
         <!--===== SCROLL REVEAL =====-->

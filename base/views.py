@@ -47,6 +47,34 @@ class Home(TemplateView):
         return HttpResponseRedirect(request.path)
 
 
+def welcomePage(request):
+    return render(request, 'base/welcome.html')
+
+
+def disclaimerPage(request):
+    return render(request, 'base/disclaimer.html')
+
+
+def vctPage(request):
+    return render(request, 'base/vct.html')
+
+
+def nutritionPage(request):
+    return render(request, 'base/nutrition.html')
+
+
+def statPage(request):
+    return render(request, 'statistics.html')
+
+
+def terms_of_use(request):
+    return render(request, 'base/terms_of_use.html')
+
+
+def privacy_policy(request):
+    return render(request, 'base/privacy_policy.html')
+
+
 # Importing the ML model for prediction.
 model = load('./savedModels/G3model.joblib')
 
@@ -110,25 +138,6 @@ def predictor(request):
         return render(request, 'result.html', {'result': y_pred})
     return render(request, 'form.html')
 
-
-def welcomePage(request):
-    return render(request, 'base/welcome.html')
-
-
-def disclaimerPage(request):
-    return render(request, 'base/disclaimer.html')
-
-
-def vctPage(request):
-    return render(request, 'base/vct.html')
-
-
-def nutritionPage(request):
-    return render(request, 'base/nutrition.html')
-
-
-def statPage(request):
-    return render(request, 'statistics.html')
 
 # Result views here.
 

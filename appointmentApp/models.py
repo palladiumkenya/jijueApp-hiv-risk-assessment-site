@@ -5,6 +5,15 @@ from django.http import request
 
 
 # Model for apppointment
+class VirtualCounsellor(models.Model):
+    name = models.CharField(max_length=256)
+    mail = models.EmailField()
+    phone_number = models.CharField(max_length=256)
+    date_time = models.DateTimeField(null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
 
 class Appointment(models.Model):
     first_name = models.CharField(max_length=50)

@@ -12,8 +12,8 @@
 <section class="home bd-grid" id="home">
     <div class="home__data" style="margin-top: -40px;">
 
-        <h1 class="home__title">JIJUE PROVIDES <strong>EXCEPTIONAL <br> </strong> MEDICAL COUNSELLORS <br> <strong>FOR YOU</strong> </h1>
-        <h3> <stron style="color: green; font-weight: 800;">You don't have to figure it out alone. </strong></h3>
+        <h1 class="home__title">JIJUE PROVIDES <strong class="home_text"> </strong> <br> MEDICAL COUNSELLORS <br> <strong>FOR YOU</strong> </h1>
+        <h3> <strong style="color: green; font-weight: 800;" class="multitext"> </strong></h3>
 
         <div>
             <a href="{% url 'appointment' %}" class="button" style="text-decoration: none;color: #ffffff; margin-top: 25px">Book a doctor's appointment</a>
@@ -94,6 +94,30 @@
                     </p>
             </p>
         </footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var typingEffect = new Typed(".multitext",{
+        strings : ["You don't have to figure it out alone.","Prevent or control HIV infection.","Stay safe and live healthy."],
+        loop : true,
+        typeSpeed : 100,
+        backSpeed : 80,
+        backDelay : 1500
+    })
+
+    var typingEffect = new Typed(".home_text",{
+        strings : ["EXCEPTIONAL","QUALIFIED","PHENOMINAL"],
+        loop : true,
+        typeSpeed : 100,
+        backSpeed : 80,
+        backDelay : 1500
+    })
+
+
+</script>
+
+
 {% block content %}
 
 <!-- End -->

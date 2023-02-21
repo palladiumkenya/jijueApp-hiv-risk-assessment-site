@@ -198,7 +198,64 @@ img {
 
 .home__data {
   align-self: center;
+  overflow: hidden;
 }
+
+/* .home::before{
+  position: absolute;
+  content: '';
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  left: 12%;
+  top: 40%;
+  opacity: 0.2;
+  background: linear-gradient(45deg, #7f00ff, pink);
+  animation: object1 18s linear infinite;
+} */
+
+.home::before{
+  position: absolute;
+  content: '';
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  left: 12%;
+  top: 40%;
+  opacity: 0.2;
+  background: linear-gradient(45deg, blue, white);
+  animation: object1 18s linear infinite;
+}
+
+.home::after{
+  position: absolute;
+  content: '';
+  width: 80px;
+  height: 75px;
+  border-radius: 50%;
+  left: 80%;
+  opacity: 0.8;
+  top: 12%;
+  background: linear-gradient(45deg, blue, white);
+  animation: object2 6s linear infinite;
+}
+
+@keyframes object1 {
+  50%{
+    left: -13%;
+    top: 41%;
+  }
+  
+}
+
+@keyframes object2 {
+  50%{
+    left: 80%;
+    top: 10%;
+  }
+  
+}
+
 
 .home__title {
   font-size: var(--big-font-size);

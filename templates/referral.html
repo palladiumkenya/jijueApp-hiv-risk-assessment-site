@@ -74,22 +74,27 @@
 
 
         
-<!--===== FOOTER =====-->
-<footer class="footer">
-    <p class="footer__title">Jijue</p>
-    <div class="footer__social">
-        <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-        <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-        <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
-    </div>
-    
-    <p>
-                
-    Copyright
-        <script>
-            document.write(new Date().getFullYear());
-        </script> &#169; Jijue | All rigths reserved | Privacy & Policy</p>
-</footer>
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Jijue</p>
+            <div class="footer__social">
+                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            
+            <p>      
+                Copyright
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> &#169; Jijue | All rigths reserved
+                    <p> 
+                        <a href="{% url 'privacy' %}" class="footer__link" style="color: blue; text-decoration: underline;">Privacy & Policy</a> | 
+                        <a href="{% url 'terms' %}" class="footer__link" style="color: blue; text-decoration: underline;">Terms of Use</a>
+                    </p>
+            </p>
+        </footer>
+        
 
 
 

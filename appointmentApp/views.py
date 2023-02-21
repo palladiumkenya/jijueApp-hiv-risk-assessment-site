@@ -6,7 +6,7 @@ from django.views.generic.base import TemplateView
 from django.core.mail import EmailMessage, message
 from django.conf import settings
 from django.contrib import messages
-from . models import Appointment
+from . models import Appointment, VirtualCounsellor
 from django.views.generic import ListView
 import datetime
 from django.template import Context
@@ -19,6 +19,25 @@ from django.template.loader import render_to_string, get_template
 
 class HomeAppointment(TemplateView):
     template_name = "appointmentApp/main.html"
+
+    def post(self, request):
+        name = request.POST.get("name")
+        mail = request.POST.get("mail")
+        phone_number = request.POST.get("phone_number")
+        date_time = request.POST.get("date_time")
+
+        virtual_counsellor = VirtualCounsellor.objects.create(
+            name=name,
+            mail=mail,
+            phone_number=phone_number,
+            date_time=date_time,
+        )
+
+        virtual_counsellor.save()
+
+        messages.add_message(request, messages.SUCCESS,
+                             f"Thanks {name} for making a virtual appointment, we will call you back at the requested time!")
+        return HttpResponseRedirect(request.path)
 
 
 class AppointmentTemplateView(TemplateView):

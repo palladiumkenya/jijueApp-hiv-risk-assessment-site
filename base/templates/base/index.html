@@ -49,7 +49,10 @@
             <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title">LEAVE<br>WORRIES BEHIND <br><span class="home__title-color">WITH HIV RISK <br> ASSESSMENT</span></h1>
+                    <h1 class="home__title"> LEAVE<br>WORRIES BEHIND <br><span class="home__title-color">WITH HIV RISK <br> ASSESSMENT</span></h1>
+
+                    <h2 > <strong class="multitext"></strong> </h2>
+                    <br>
 
                     <a href="{% url 'welcome-page' %}" class="button">Assess my risk</a>
 
@@ -438,6 +441,16 @@
         
         <script src="{% static 'js/main.js' %}"></script>
         <script src="{% static 'jscript/bootstrap.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script>
+            var typingEffect = new Typed(".multitext",{
+                strings : ["Prevent or control HIV infection.","Live safe and happy.", "A safe and fulfilling lifestyle begins here."],
+                loop : true,
+                typeSpeed : 100,
+                backSpeed : 80,
+                backDelay : 1500
+            })
+        </script>
     
     
     </body>

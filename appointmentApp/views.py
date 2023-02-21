@@ -35,6 +35,16 @@ class HomeAppointment(TemplateView):
 
         virtual_counsellor.save()
 
+        message = f"New call request from {name} at {date_time}. Email address: {mail}"
+
+        email = EmailMessage(
+            subject=f"{name} from JijueApp",
+            body=message,
+            from_email=settings.EMAIL_HOST_USER,
+            to=[settings.EMAIL_HOST_USER],
+        )
+        email.send()
+
         messages.add_message(request, messages.SUCCESS,
                              f"Thanks {name} for making a virtual appointment, we will call you back at the requested time!")
         return HttpResponseRedirect(request.path)

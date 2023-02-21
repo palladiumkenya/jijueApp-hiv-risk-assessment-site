@@ -5,6 +5,7 @@
 <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
 
+
 {% block cta %}
 
 
@@ -78,6 +79,21 @@
 
 </section>
 
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Jijue</p>
+            
+            <p>      
+                Copyright
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> &#169; Jijue | All rigths reserved
+                    <p> 
+                        <a href="{% url 'privacy' %}" class="footer__link" style="color: blue; text-decoration: underline;">Privacy & Policy</a> | 
+                        <a href="{% url 'terms' %}" class="footer__link" style="color: blue; text-decoration: underline;">Terms of Use</a>
+                    </p>
+            </p>
+        </footer>
 {% block content %}
 
 <!-- End -->

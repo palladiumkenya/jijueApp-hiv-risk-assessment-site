@@ -53,21 +53,21 @@
     <div class="contact__container bd-grid">
 
         <form role="form" method="POST" class="contact__form" action="">
-            <h5 style="text-align: center;line-height: 30px;">
+            <h6 style="text-align: center;line-height: 30px;">
                 Don't worry, we'll get back to you as soon as possible - just provide your name and valid email or phone number. 
-                Rest assured that your data is kept completely confidential.</h5>
+                Rest assured that your data is kept completely confidential.</h6>
 
             {% csrf_token %}
             <input id="name" name="name" type="text" placeholder="Full name" class="contact__input" required>
 
             <input id="mail" name="mail" type="text" placeholder="Email address" class="contact__input" required>
 
-            <input id="phone" name="phone" type="text" placeholder="Phone number" class="contact__input" required>
+            <input id="phone_number" name="phone_number" type="text" placeholder="Phone number" class="contact__input" required>
 
             <div class="form-group">
                 <p> <strong style="color: red;">Select a convenient date and time</strong> </p>
                 <br>
-                
+
                 <input id="date_time" name="date_time" type="datetime-local" class="contact__input" required>
             </div>
 

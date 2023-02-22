@@ -10,20 +10,25 @@
 
 
 <section class="home bd-grid" id="home">
-    <div class="home__data" style="margin-top: -40px;">
+        <div class="home__data" style="margin-top: -40px;">
 
-        <h1 class="home__title">JIJUE PROVIDES <strong class="home_text"> </strong> <br> MEDICAL COUNSELLORS <br> <strong>FOR YOU</strong> </h1>
-        <h3> <strong style="color: green; font-weight: 800;" class="multitext"> </strong></h3>
+            <h1 class="home__title">JIJUE PROVIDES <strong class="home_text"> </strong> <br> MEDICAL COUNSELLORS <br> <strong>FOR YOU</strong> </h1>
+            <h3> <strong style="color: green; font-weight: 800;" class="multitext"> </strong></h3>
+    
+            <div>
+                <a href="{% url 'appointment' %}" class="button" style="text-decoration: none;color: #ffffff; margin-top: 25px">Book a doctor's appointment</a>
+            </div>
+            <div>
+                <a href="#call" class="button" style="text-decoration: none;color: #ffffff; margin-top: 40px">Speak to a Virtual Counsellor</a>
+            </div>
+        </div>
 
-        <div>
-            <a href="{% url 'appointment' %}" class="button" style="text-decoration: none;color: #ffffff; margin-top: 25px">Book a doctor's appointment</a>
-        </div>
-        <div>
-            <a href="#call" class="button" style="text-decoration: none;color: #ffffff; margin-top: 40px">Speak to a Virtual Counsellor</a>
-        </div>
-    </div>
+    
 
     <!-- <div class="home__img">
+
+        <img src="{}" alt="">
+        
         <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <mask id="mask0" mask-type="alpha">
                 <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
@@ -37,7 +42,7 @@
 
 </section>
 
-<section class="contact section" id="call">
+<section class="contact section" id="call" style="margin-top: 20px;" >
     <h2  class="section-title" style="font-weight: 700;">Speak to a counsellor</h2>
     
     {% if messages %}
@@ -50,10 +55,10 @@
     </div> 
     {% endif %}
 
-    <div class="contact__container bd-grid">
+    <div class="contact__container bd-grid" style="background-color: #87CEEB; margin-bottom: 20px;">
 
-        <form role="form" method="POST" class="contact__form" action="">
-            <h6 style="text-align: center;line-height: 30px;">
+        <form role="form" method="POST" class="contact__form" action="" style="margin-bottom: 20px;">
+            <h6 style="text-align: center;line-height: 30px; color: black;">
                 Don't worry, we'll get back to you as soon as possible - just provide your name and valid email or phone number. 
                 Rest assured that your data is kept completely confidential.</h6>
 

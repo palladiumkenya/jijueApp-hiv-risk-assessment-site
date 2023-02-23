@@ -64,7 +64,7 @@ def nutritionPage(request):
 
 
 def statPage(request):
-    return render(request, 'statistics.html')
+    return render(request, 'base/statistics.html')
 
 
 def terms_of_use(request):

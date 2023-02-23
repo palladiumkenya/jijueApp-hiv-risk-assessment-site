@@ -9,9 +9,6 @@
         <link href="{% static 'js/main.js' %}">
         
 
-
-
-
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
@@ -133,45 +130,49 @@
             
 
             <section class="contact section" id="contact">
-                <h2  class="section-title">Get results</h2>
-                <h4 style="text-align: center;" >Would you like an email copy of your results? </h4>
 
-                <div class="contact__container bd-grid">
-                    <div>
-                        <a href="" style="color: red;">No</a>
-                            <button class="welcomeBtn" style="border-radius: 25px; height: 50px;"></button>
-                        <a href="{% url 'result' %}">Yes</a>
+
+                <div class="about__container bd-grid">
+                    <div class="contact__container bd-grid" style="padding: 10px;">
+                        <h2  class="section-title">Get results</h2>
+                        <h4 style="text-align: center;" >Would you like an email copy of your results? </h4>
+
+                        <div  style="padding: .5rem; margin-top: 20px; margin-bottom: 30px; text-decoration: none; border-radius: 20px;" >
+                            <a href="{% url 'result' %}" class="welcomeBtn" style="padding: 20px;">Continue</a>
+                        </div>
+
+                        <br>
+                        <br>
+
+                        <p> By clicking 'Yes', you consent to giving us your personal contact details.</p>
+            
                     </div>
+                    
+                    <div style="background-color: #87CEEB; padding: 30px;">
+                        <h2 class="about__subtitle">Sharing is caring :)</h2>
+                            <p class="about__text">
+                                Are your friends and family at risk of HIV infection? 
+                                <br>
+                                <br>
+                                Help them find out about their risk report by referring them to this site.
+                                <br>
+                                <br>
+                                Click to share the link
+                                <br>
+                                <br>
+                            </p>
+                            
+                            <div class="home__social">
 
-                    <br>
-                    <br>
+                                <a href="{% url 'message' %}" class="home__social-icon"><i class='bx bx-envelope bx-flip-horizontal bx-tada' ></i></i></a>
+                                <a href="{% url 'message' %}" class="home__social-icon"><i class='bx bxl-facebook bx-flip-horizontal bx-tada'></i></a>
+                                <a href="{% url 'message' %}" class="home__social-icon"><i class='bx bxl-instagram bx-flip-horizontal bx-tada' ></i></a>
+                                <a href="{% url 'message' %}" class="home__social-icon"><i class='bx bxl-twitter bx-flip-horizontal bx-tada' ></i></a>
+                                <a href="{% url 'message' %}" class="home__social-icon"><i class='bx bxl-whatsapp bx-flip-horizontal bx-tada' ></i></a>
 
-                    <p> By clicking 'Yes', you consent to giving us your personal contact details.</p>
-        
+                            </div>
+                    </div>                                   
                 </div>
-                
-                <!-- {% if messages %}
-                <div class="contact__container bd-grid">
-                    <div class="contact__container bd-grid">
-                    {% for message in messages %}
-                        <div class="card-title" style="color: green;">{{message}} </div>
-                    {% endfor %}
-                    </div>
-                </div> 
-                {% endif %} -->
-
-                <!-- <div class="contact__container bd-grid">
-                    <form role="form" method="POST" class="contact__form" action="">
-                        {% csrf_token %}
-                        <input id="mail" name="mail" type="text" placeholder="you@mail.com" class="contact__input" required>
-
-                        
-  
-                        <input  id="send" type="submit" value="Send Results" class="contact__button button">
-    
-                    </form> 
-                </div> 
-         -->
         </section>
 
           </main>
@@ -204,6 +205,12 @@
 
         <!--===== SCROLL REVEAL =====-->
         <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'jscript/bootstrap.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
         <!--===== MAIN JS =====-->
         <script src="#"></script>

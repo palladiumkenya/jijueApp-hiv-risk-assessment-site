@@ -88,7 +88,7 @@
                             <label class="form-control-label px-3">First name<span class="text-danger"> *</span>
                             </label>
                             <input required type="text" id="fname" name="fname" placeholder="Enter your first name" onblur="validate(1)"> 
-                        </div>
+                            </div>
 
                         <div class="form-group col-sm-6 flex-column d-flex"> 
                             <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label> 
@@ -112,12 +112,50 @@
 
                         </div>
 
-                        <!-- <div class="row justify-content-between text-left">
-                            <div class="form-group col-12 flex-column d-flex"> 
-                                <label class="form-control-label px-3">Your request<span class="text-danger"> *</span></label> 
-                                <textarea type="text" id="ans" name="request" placeholder="" onblur="validate(6)"></textarea> 
+                        <div class="row justify-content-between text-left">
+
+                            <div class="form-group col-sm-6 flex-column d-flex"> 
+                                <label class="form-control-label px-3">Sub-county<span class="text-danger"> *</span></label> 
+                                <select style="height: 50px;" id="ans" name="request" class="form-control" onblur="validate(6)" >
+                                    <option disabled selected value>Select an option</option>
+                                    <option value="">Dagoretti North</option>
+                                    <option value="">Dagoretti South</option>
+                                    <option value="">Embakasi Central</option>
+                                    <option value="">Embakasi East</option>
+                                    <option value="">Embakasi South</option>
+                                    <option value="">Embakasi West</option>
+                                    
+                                </select> 
                             </div>
-                        </div> -->
+
+                            <div class="form-group col-sm-6 flex-column d-flex"> 
+                                <label class="form-control-label px-3">Ward<span class="text-danger"> *</span></label> 
+                                <select style="height: 50px;" id="ans" name="request" class="form-control" onblur="validate(6)" >
+                                    <option disabled selected value>Select an option</option>
+                                    <option value="">Dandora Area 1</option>
+                                    <option value="">Kariobangi NOrth</option>
+                                    <option value="">Makongeni</option>
+                                    <option value="">Woodley</option>
+                                    <option value="">Mountainview</option>
+                                </select> 
+                            </div>
+
+                        </div>
+
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex"> 
+                                <label class="form-control-label px-3">Select facility<span class="text-danger"> *</span></label> 
+                                <select style="height: 50px;" id="ans" name="request" class="form-control" onblur="validate(6)" >
+                                    <option disabled selected value>Select an option</option>
+                                    <option value="">Aga Khan Clinic</option>
+                                    <option value="">Ririuta Healthcare</option>
+                                    <option value="">Lang'ata Healthcetre</option>
+                                    <option value="">Mbagathi Healthcetre</option>
+                                    <option value="">Dandora II Healthcetre</option>
+                                </select> 
+                            </div>
+                        </div>
+
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex"> 

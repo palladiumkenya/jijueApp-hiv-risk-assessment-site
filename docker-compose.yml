@@ -1,22 +1,31 @@
-version: "3"
+version: "2.1"
+
 services:
+  database:
+    image: mysql:5.6
+    container_name: testing_database
+    restart: unless-stopped
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DB:-JIJUE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-ghrde_Z2vssmu52Tq7ZyWM603YL4UvEg}
+      MYSQL_USER: ${MYSQL_USER:-juser}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-juser}
+      TZ: "Africa/Nairobi"
+
   app:
     build: .
+    depends_on:
+      - database
+    container_name: jijue_app
     ports:
       - 8000:8000
-    volumes:
-      - ./:/jijueapp
-    image: app:jijueapp
-
-    container_name: jijueapp_container
-    # env_file:
-    #     - ./.env
     environment:
-      - DEBUG=1
-      - SECRET_KEY=django-insecure-gl4urfb)f(w=sikb-rhxfwbzly4&jyp$%d=ao=22@d6(*qj567
-      - EMAIL_HOST_USER=jijueapp@gmail.com
-      - EMAIL_HOST_PASSWORD=vacbgjanbpqcuiyq
-      - account_sid=AC70ddd96f0b8b5d27828a2f9b8b34f125
-      - auth_token=fcd66ee758cbb2887f934dbaa4f96437
-        
-    command: python3 manage.py runserver 0.0.0.0:8000
+      SECRET_KEY: ${SECRET_KEY:-django-insecure-gl4urfb)f(w=sikb-rhxfwbzly4&jyp$%d=ao=22@d6(*qj567}
+      DEBUG: ${DEBUG:-1}
+      EMAIL_HOST_USER: ${EMAIL_HOST_USER:-jijueapp@gmail.com}
+      EMAIL_HOST_PASSWORD: ${EMAIL_HOST_PASSWORD:-vacbgjanbpqcuiyq}
+      account_sid: ${account_sid:-AC70ddd96f0b8b5d27828a2f9b8b34f125}
+      auth_token: $auth_token:-fcd66ee758cbb2887f934dbaa4f96437}
+

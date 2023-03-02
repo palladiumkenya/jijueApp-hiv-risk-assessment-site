@@ -1,15 +1,58 @@
-# jijueApp
+# jijue application
 
-## Usage
+## Setup
 
-### 1. Using the Virtual environment
+The first thing to do is to clone the repository:
 
-1.  Using Python 3.10 and above, run `python -m venv venv` to create a virtual environment
-2.  Run `pip install -r requirements.txt` to install dependencies
-3.  Run `python manage.py runserver` to start development server
-4.  Navigate to [http://127.0.0.1:8000](http://127.0.0.1:8000) to test
+```sh
+$ https://github.com/palladiumkenya/jijueApp-hiv-risk-assessment-site.git
+```
 
-### 2. Using Docker
+Create a virtual environment to install dependencies in and activate it:
 
-1.  Run `docker-compose up --build` to create docker image and container
-2.  Navigate to [localhost:8000](localhost:8000) to test
+```sh
+$ virtualenv --no-site-packages env
+$ source env/bin/activate
+```
+
+Then install the dependencies:
+
+```sh
+(env)$ pip install -r requirements.txt
+```
+
+Note the `(env)` in front of the prompt. This indicates that this terminal
+session operates in a virtual environment set up by `virtualenv`.
+
+Update database crentials save and run migrations:
+
+```
+(env)$ nano settings
+(env)$ cd ..
+(env)$ python manage.py makemigrations
+(env)$ python manage.py migrate
+```
+
+Run the server:
+
+```
+(env)$ python manage.py runserver
+```
+
+And navigate to `http://127.0.0.1:8000/
+
+ALL SET.
+
+## Tests
+
+To run the tests, `cd` into the directory where `manage.py` is:
+
+```sh
+(env)$ python manage.py test
+```
+
+## Docker set up
+
+    https://github.com/palladiumkenya/jijueApp-hiv-risk-assessment-site.git
+    docker-compose up -d
+    You can now access the server at http://localhost:8000

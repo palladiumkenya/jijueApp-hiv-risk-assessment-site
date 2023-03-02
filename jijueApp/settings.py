@@ -71,12 +71,14 @@ WSGI_APPLICATION = 'jijueApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
@@ -89,18 +91,18 @@ WSGI_APPLICATION = 'jijueApp.wsgi.application'
 # }
 
 """
-For development 
+mysql for development 
 """
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'JIJUE',
-        'USER': 'juser',
-        'PASSWORD': 'juser',
-        'HOST': 'testing_database',
-        'PORT': '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'JIJUE',
+#         'USER': 'juser',
+#         'PASSWORD': 'juser',
+#         'HOST': 'testing_database',
+#         'PORT': '3306',
+#     }
+# }
 
 
 # Password validation

@@ -34,4 +34,4 @@ jobs:
             # create the image
             docker build -t jijue:latest .
             #bring up the image
-            docker run -p 8900:8000 --name=jijue  jijue:latest
+            docker run -p 8900:8000 --name=jijue -d jijue:latest

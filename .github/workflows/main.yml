@@ -18,14 +18,14 @@ jobs:
         script: |
             # rm existing folder
             cd /apps/dockerApps/
-            sudo rm -rf jijue
+            sudo rm -rf jijueApp-hiv-risk-assessment-site
             # create a new folder
-            sudo mkdir jijue
+            sudo mkdir jijueApp-hiv-risk-assessment-site
             # give permissions on the folder
-            sudo chown cicd2:cicd2 jijue
+            sudo chown cicd2:cicd2 jijueApp-hiv-risk-assessment-site
             # clone the master branch from  the github
-            cd jijue
-            git clone https://github.com/palladiumkenya/jijueApp-hiv-risk-assessment-site.git
+            cd jijueApp-hiv-risk-assessment-site
+            git clone https://github.com/palladiumkenya/jijueApp-hiv-risk-assessment-site.git .
             # bring down existing docker image
             docker stop jijue
             # remove the image .

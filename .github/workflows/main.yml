@@ -17,7 +17,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
             # rm existing folder
-            cd /apps/dockerApps/
+            cd /apps/github-workflows
             sudo rm -rf jijueApp-hiv-risk-assessment-site
             # create a new folder
             sudo mkdir jijueApp-hiv-risk-assessment-site
@@ -26,6 +26,7 @@ jobs:
             # clone the master branch from  the github
             cd jijueApp-hiv-risk-assessment-site
             git clone https://github.com/palladiumkenya/jijueApp-hiv-risk-assessment-site.git .
+            cp /apps/dockerApps/.env .
             # bring down existing docker image
             docker stop jijue
             # remove the image .

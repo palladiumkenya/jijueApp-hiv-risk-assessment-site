@@ -24,7 +24,7 @@ Then install the dependencies:
 Note the `(env)` in front of the prompt. This indicates that this terminal
 session operates in a virtual environment set up by `virtualenv`.
 
-Update database crentials save and run migrations:
+Update database credentials save and run migrations:
 
 ```
 (env)$ nano settings

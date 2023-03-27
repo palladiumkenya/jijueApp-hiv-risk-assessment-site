@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
 
     'appointmentApp.apps.AppointmentappConfig',
+
+    'appointment.apps.AppointmentConfig',
 ]
 
 MIDDLEWARE = [

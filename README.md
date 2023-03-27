@@ -52,7 +52,8 @@ To run the tests, `cd` into the directory where `manage.py` is:
 ```
 
 ## Docker set up
-
-    https://github.com/palladiumkenya/jijueApp-hiv-risk-assessment-site.git
-    docker-compose up -d
-    You can now access the server at http://localhost:8000
+```sh
+https://github.com/palladiumkenya/jijueApp-hiv-risk-assessment-site.git
+docker-compose up -d
+```
+You can now access the server at http://localhost:8000

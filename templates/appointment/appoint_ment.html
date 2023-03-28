@@ -1,19 +1,21 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'appointment/base.html' %}
+<!-- space -->
+{% block content %}
 <select
-  name="course"
+  name="county"
   id=""
   class="custom-select mb-4"
-  hx-get="{% url 'modules' %}"
+  hx-get="{% url 'sub-county' %}"
   hx-trigger="change"
-  hx-target="#modules"
+  hx-target="#sub_county"
 >
-  <option selected>Open this select menu</option>
-  {% for course in courses %}
-  <option value="{{ course.pk }}">{{ course.name }}</option>
+  <option selected>Select county</option>
+  {% for county in counties %}
+  <option value="{{ county.pk }}">{{ county.name }}</option>
   {% endfor %}
 </select>
-<!-- for modules -->
-<div id="modules" class="my-4">{% include 'partials/modules.html' %}</div>
+<!-- for subcounties -->
+<div id="sub_county" class="my-4">{% include 'partials/sub_county.html' %}</div>
 <!-- for tutors -->
-<div id="tutors" class="my-4">{% include 'partials/tutors.html' %}</div>
+<!-- <div id="ward" class="my-4">{% include 'partials/ward.html' %}</div> -->
 {% endblock %}

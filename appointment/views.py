@@ -14,7 +14,7 @@ def sub_counties(request):
     county = request.GET.get('county')
     sub_counties = SubCounty.objects.filter(county=county)
     context = {'sub_counties': sub_counties, 'is_htmx': True}
-    return render(request, 'partials/modules.html', context)
+    return render(request, 'partials/sub_county.html', context)
 
 
 def wards(request):

@@ -7,7 +7,7 @@
   class="custom-select mb-4"
   hx-get="{% url 'sub-county' %}"
   hx-trigger="change"
-  hx-target="#sub_county"
+  hx-target="#sub-county"
 >
   <option selected>Select county</option>
   {% for county in counties %}
@@ -15,7 +15,7 @@
   {% endfor %}
 </select>
 <!-- for subcounties -->
-<div id="sub_county" class="my-4">{% include 'partials/sub_county.html' %}</div>
+<div id="sub-county" class="my-4">{% include 'partials/sub_county.html' %}</div>
 <!-- for tutors -->
-<!-- <div id="ward" class="my-4">{% include 'partials/ward.html' %}</div> -->
+<div id="ward" class="my-4">{% include 'partials/ward.html' %}</div>
 {% endblock %}

@@ -1,0 +1,20 @@
+<select
+  id=""
+  class="custom-select mb-4"
+  name="sub-county"
+  hx-get=""
+  hx-trigger="change"
+  hx-target="#"
+>
+  <option selected>Choose sub-county</option>
+  {% for sub_county in sub_counties %}
+  <option value="{{ sub_county.pk }}">{{ sub_county.name }}</option>
+  {% endfor %}
+</select>
+
+<!--logic for wards -->
+<!-- {% if is_htmx %}
+<div id="tutors" class="my-4" hx-swap-oob="true">
+  {% include 'partials/ward.html' %}
+</div>
+{% endif %} -->

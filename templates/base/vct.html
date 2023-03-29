@@ -1,20 +1,40 @@
 {% load static %}
 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
 
-        <!-- =====BOX ICONS===== -->
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- =====BOX ICONS===== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-        <title>VCT Centres</title>
-</head>
-<body>
-     
+    <title>VCT Centres</title>
+  </head>
+  <body>
     <main class="l-main">
+<<<<<<< HEAD
+      <!---====MAP===-->
+      <section>
+        <div class="responsive-map">
+          <!--         <iframe width="300" height="200" frameborder="0" scrolling="no" allowfullscreen src="https://arcg.is/1fLDiT0"></iframe> -->
+          <iframe
+            src="https://www.arcgis.com/apps/instant/basic/index.html?appid=8c80198460ef48a2afa6f94c14ecd691&locale=en-gb"
+            width="100%"
+            height="600"
+            frameborder="0"
+            style="border: 0"
+            allowfullscreen
+            >iFrames are not supported on this page.</iframe
+          >
+          <!-- <iframe src="https://www.arcgis.com/apps/instant/basic/index.html?appid=0b356461a37c454c94ee85e357ad8dec&locale=en-gb" width="400" height="600" frameborder="0" style="border:0" allowfullscreen>iFrames are not supported on this page.</iframe> -->
+        </div>
+      </section>
+=======
 <!---====MAP===-->
 <section>
     <div class="responsive-map">
@@ -25,18 +45,13 @@
 
 </section>
     
+>>>>>>> b4bc8b43a9b7c049d39d1f9680788871eccccc9c
     </main>
 
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
 
-
-
-<!--===== SCROLL REVEAL =====-->
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<!--===== MAIN JS =====-->
-<script src="{% static 'js/main.js' %}"></script>
-
-
-
-</body>
+    <!--===== MAIN JS =====-->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
 </html>

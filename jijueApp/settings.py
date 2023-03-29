@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
 
     'appointmentApp.apps.AppointmentappConfig',
+
+    'appointment.apps.AppointmentConfig',
 ]
 
 MIDDLEWARE = [
@@ -93,16 +95,16 @@ DATABASES = {
 """
 mysql for development 
 """
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'JIJUE',
-        'USER': 'juser',
-        'PASSWORD': 'juser',
-        'HOST': 'testing_database',
-        'PORT': '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'JIJUE',
+#         'USER': 'juser',
+#         'PASSWORD': 'juser',
+#         'HOST': 'testing_database',
+#         'PORT': '3306',
+#     }
+# }
 
 
 # Password validation

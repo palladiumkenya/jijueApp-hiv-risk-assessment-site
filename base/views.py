@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 
 from django.http import HttpResponse
 
@@ -26,6 +27,7 @@ class Home(TemplateView):
     template_name = "base/index.html"
 
 # contact form
+    @csrf_exempt
     def post(self, request):
         name = request.POST.get('name')
         email = request.POST.get('email')
